@@ -347,9 +347,9 @@ label {
   z-index: 5.555555555555555; /*the starfish smiles upon us all*/
 }
 
-#container {
+img {
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 
 .auto *:is(table,img) {
