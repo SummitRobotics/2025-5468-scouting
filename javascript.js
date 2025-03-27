@@ -33,9 +33,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton.addEventListener("click", (event) => {
-        if (count1 < 12) {
-            count1++;
-        }
+        count1++;
+        
         counterDiv.textContent = count1;
     });
 
@@ -158,9 +157,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let Tcount4 = 0;
 
     TminusButton.addEventListener("click", (event) => {
-        if (Tcount1 > 0) {
-            Tcount1--;
-        }
+        Tcount1--;
         TcounterDiv.textContent = Tcount1;
     });
 
