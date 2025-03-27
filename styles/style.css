@@ -334,14 +334,10 @@ label {
 
 /*ADD THE BELOW TO THE .SCSS*/
 /*ALSO: cv and Tcv text size, +/- button size, border changes*/
-
-#top-bar-container {
+#top-bar {
   position: fixed;
   top: 0;
   left: 0;
-}
-#top-bar {
-  position:relative;
   border-bottom: 0.25em solid #14c600 !important;
   background-color: rgb(28,28,28);
   height:1.5em;
