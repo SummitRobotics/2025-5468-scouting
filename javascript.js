@@ -284,13 +284,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     
     document.getElementById('leaveY').addEventListener("click", () => {
-        document.querySelectorAll(".auto .onField").forEach((element) => {
+        document.querySelectorAll(".onField ~ .auto .onField").forEach((element) => {
             element.style.display = "table";
         });
     });
 
     document.getElementById('leaveN').addEventListener("click", () => {
-        document.querySelectorAll(".auto .onField").forEach((element) => {
+        document.querySelectorAll(".onField ~ .auto .onField").forEach((element) => {
             element.style.display = "none";
         });
     });
