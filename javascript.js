@@ -270,6 +270,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById('defenseN').addEventListener("click", () => {
         document.getElementById("defenseTable").style.display = "none";
     });
+    
+    document.getElementById('fieldY').addEventListener("click", () => {
+        document.querySelector("onField").style.display = "table";
+    });
+
+    document.getElementById('fieldN').addEventListener("click", () => {
+        document.querySelector("onField").style.display = "none";
+    });
+    
     // Read URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const scoutName = urlParams.get('name');
