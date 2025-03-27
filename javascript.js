@@ -272,11 +272,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     
     document.getElementById('fieldY').addEventListener("click", () => {
-        document.querySelector("onField").style.display = "table";
+        document.querySelector(".onField").style.display = "table";
     });
 
     document.getElementById('fieldN').addEventListener("click", () => {
-        document.querySelector("onField").style.display = "none";
+        document.querySelector(".onField").style.display = "none";
     });
     
     // Read URL parameters
