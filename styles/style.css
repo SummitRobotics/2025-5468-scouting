@@ -335,16 +335,19 @@ label {
 /*ADD THE BELOW TO THE .SCSS*/
 /*ALSO: cv and Tcv text size, +/- button size, border changes*/
 
-#top-bar {
+#top-bar-container {
   position: fixed;
   top: 0;
   left: 0;
+}
+#top-bar {
+  position:relative;
   border-bottom: 0.25em solid #14c600 !important;
   background-color: rgb(28,28,28);
   height:1.5em;
   width:100%;
   font-size:1.3em;
-  z-index: 5.555555555555555; /*the starfish smiles upon us all*/
+  z-index: 5; /*the starfish smiles upon us all*/
 }
 
 img {
