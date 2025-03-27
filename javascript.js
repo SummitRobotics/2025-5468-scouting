@@ -157,14 +157,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let Tcount4 = 0;
 
     TminusButton.addEventListener("click", (event) => {
-        Tcount1--;
+        if (Tcount1 > 0) {
+            Tcount1--;
+        }
         TcounterDiv.textContent = Tcount1;
     });
 
     TplusButton.addEventListener("click", (event) => {
-        if (Tcount1 < 12) {
-            Tcount1++;
-        }
+        Tcount1++;
         TcounterDiv.textContent = Tcount1;
     });
 
