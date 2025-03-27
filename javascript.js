@@ -283,6 +283,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
     
+    document.getElementById('leaveY').addEventListener("click", () => {
+        document.querySelectorAll(".auto .onField").forEach((element) => {
+            element.style.display = "table";
+        });
+    });
+
+    document.getElementById('leaveN').addEventListener("click", () => {
+        document.querySelectorAll(".auto .onField").forEach((element) => {
+            element.style.display = "none";
+        });
+    });
+    
     // Read URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const scoutName = urlParams.get('name');
