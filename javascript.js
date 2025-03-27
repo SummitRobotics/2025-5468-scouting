@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton.addEventListener("click", (event) => {
-        count1++;
+        if (count1 < 12) {
+            count1++;
+        }
         counterDiv.textContent = count1;
     });
 
@@ -45,7 +47,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton2.addEventListener("click", (event) => {
-        count2++;
+        if (count2 < 12) {
+            count2++;
+        }
         counterDiv2.textContent = count2;
     });
 
@@ -57,7 +61,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton3.addEventListener("click", (event) => {
-        count3++;
+        if (count3 < 12) {
+            count3++;
+        }
         counterDiv3.textContent = count3;
     });
 
@@ -69,7 +75,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton4.addEventListener("click", (event) => {
-        count4++;
+        if (count4 < 12) {
+            count4++;
+        }
         counterDiv4.textContent = count4;
     });
 
@@ -157,7 +165,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     TplusButton.addEventListener("click", (event) => {
-        Tcount1++;
+        if (Tcount1 < 12) {
+            Tcount1++;
+        }
         TcounterDiv.textContent = Tcount1;
     });
 
@@ -169,7 +179,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     TplusButton2.addEventListener("click", (event) => {
-        Tcount2++;
+        if (Tcount2 < 12) {
+            Tcount2++;
+        }
         TcounterDiv2.textContent = Tcount2;
     });
 
@@ -181,7 +193,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     TplusButton3.addEventListener("click", (event) => {
-        Tcount3++;
+        if (Tcount3 < 12) {
+            Tcount3++;
+        }
         TcounterDiv3.textContent = Tcount3;
     });
 
@@ -193,7 +207,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     TplusButton4.addEventListener("click", (event) => {
-        Tcount4++;
+        if (Tcount4 < 12) {
+            Tcount4++;
+        }
         TcounterDiv4.textContent = Tcount4;
     });
 
