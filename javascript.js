@@ -272,11 +272,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     
     document.getElementById('fieldY').addEventListener("click", () => {
-        document.querySelectorAll(".onField").style.display = "table";
+        document.querySelectorAll(".onField").forEach((element) => {
+            element.style.display = "table";
+        });
     });
 
     document.getElementById('fieldN').addEventListener("click", () => {
-        document.querySelectorAll(".onField").style.display = "none";
+        document.querySelectorAll(".onField").forEach((element) => {
+            element.style.display = "none";
+        });
     });
     
     // Read URL parameters
