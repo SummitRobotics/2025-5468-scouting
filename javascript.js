@@ -1,4 +1,4 @@
-console.log('working, v2.3 - 3/28/2025');
+console.log('working, v2.4 - 3/28/2025');
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 

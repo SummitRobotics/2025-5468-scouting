@@ -632,12 +632,18 @@
         const urlParams = new URLSearchParams(window.location.search);
         const teamNumber = urlParams.get('team');
         const matchNum = urlParams.get('match');
-        const name = urlParams.get('name');
+        const scoutName = urlParams.get('name');
+        const scoutingSeat = urlParams.get('seat'); // Retrieve the scouting seat from the URL
+
+        // Populate the fields with the retrieved values
         if (teamNumber) {
-            document.getElementById('team').innerText = "Team: " + teamNumber;
+            document.getElementById('team').textContent = `Team: ${teamNumber}`;
         }
         if (matchNum) {
-            document.getElementById('matchNumInput').innerText = "Match #" + matchNum;
+            document.getElementById('matchNumInput').textContent = `Match #: ${matchNum}`;
+        }
+        if (scoutingSeat) {
+            console.log(`Scouting Seat: ${scoutingSeat}`); // Log the scouting seat to verify
         }
     });
 </script>
