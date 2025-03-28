@@ -1,4 +1,4 @@
-console.log('working, v2.2 - 3/28/2025');
+console.log('working, v2.3 - 3/28/2025');
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 
@@ -300,6 +300,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const scoutName = urlParams.get('name');
     const matchNum = urlParams.get('match');
     const teamNumber = urlParams.get('team');
+    const scoutingSeat = urlParams.get('seat'); // Capture the scouting seat from the URL
 
     submitButton.addEventListener("click", (event) => {
         const leavePos = document.querySelector('input[name="leave"]:checked');
@@ -346,6 +347,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             timestamp: formattedDate, // Add the timestamp as the first field
             scoutName: scoutName,
             matchNum: matchNum,
+            scoutingSeat: scoutingSeat, // Add the scouting seat to the data
             teamNumber: teamNumber,
             robotOnField: robotOnField ? robotOnField.nextElementSibling.textContent : null,
             leavePos: leavePos ? leavePos.nextElementSibling.textContent : null,
@@ -378,7 +380,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         };
         const queryString = new URLSearchParams(data).toString();
 
-        fetch(`https://script.google.com/macros/s/AKfycbzdaNJqems6kXwyru5wuSr5z9lZPCI626SA6zGujW2OJkNt64mcoFCRhtld1OuFImLH3w/exec?${queryString}`, {
+        fetch(`https://script.google.com/macros/s/AKfycbxTrRTsvAThVP1HNxOEpV8TgpjIQcoui9BLSkk9VVhhH3ZFUjFxCD8j4wWuALEXkciK5A/exec?${queryString}`, {
             method: 'POST',
             redirect: "follow",
             headers: {
