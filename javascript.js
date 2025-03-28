@@ -1,4 +1,4 @@
-console.log('working, api test v1.12');
+console.log('working, v2.0');
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 
@@ -310,6 +310,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const driverSkill = document.querySelector('input[name="skill"]:checked');
         const defense = document.querySelector('input[name="defense"]:checked');
         const speed = document.querySelector('input[name="speed"]:checked');
+        const robotOnField = document.querySelector('input[name="field"]:checked'); // Add this line
         const notes = document.getElementById("notes").value;
         const rankPoints = document.getElementById("rankPoints").value;
         const total = 3 * (leavePos ? 1 : 0)
@@ -339,6 +340,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             scoutName: scoutName,
             matchNum: matchNum,
             teamNumber: teamNumber,
+            robotOnField: robotOnField ? robotOnField.nextElementSibling.textContent : null, // Add this line
             leavePos: leavePos ? leavePos.nextElementSibling.textContent : null,
             counter1: count1,   
             counter2: count2,
