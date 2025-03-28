@@ -310,9 +310,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const driverSkill = document.querySelector('input[name="skill"]:checked');
         const defense = document.querySelector('input[name="defense"]:checked');
         const speed = document.querySelector('input[name="speed"]:checked');
-        const robotOnField = document.querySelector('input[name="field"]:checked'); // Add this line
+        const robotOnField = document.querySelector('input[name="field"]:checked');
         const notes = document.getElementById("notes").value;
         const rankPoints = document.getElementById("rankPoints").value;
+
+        // Generate the current date and time in the desired format
+        const now = new Date();
+        const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()} ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+
         const total = 3 * (leavePos ? 1 : 0)
                     + 3 * count1 + 4 * count2 + 6 * count3 + 7 * count4 + 4 * countN + 6 * countP
                     + 2 * Tcount1 + 3 * Tcount2 + 4 * Tcount3 + 5 * Tcount4 + 4 * TcountN + 6 * TcountP
@@ -335,12 +340,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if (defenseAssess.length === 0) {
             defenseAssess.push("null");
         }
-        console.log(defenseAssess)
+        console.log(defenseAssess);
+
         const data = {
+            timestamp: formattedDate, // Add the timestamp as the first field
             scoutName: scoutName,
             matchNum: matchNum,
             teamNumber: teamNumber,
-            robotOnField: robotOnField ? robotOnField.nextElementSibling.textContent : null, // Add this line
+            robotOnField: robotOnField ? robotOnField.nextElementSibling.textContent : null,
             leavePos: leavePos ? leavePos.nextElementSibling.textContent : null,
             counter1: count1,   
             counter2: count2,
