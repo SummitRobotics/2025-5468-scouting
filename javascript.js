@@ -1,4 +1,4 @@
-console.log('working, v2.1');
+console.log('working, v2.2 - 3/28/2025');
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 
@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         };
         const queryString = new URLSearchParams(data).toString();
 
-        fetch(`https://script.google.com/macros/s/AKfycbzpxL-Rb82nqTwVFqu3ebxDFSewT0p7aI873ZuTwiYmgcA7FPSPswvt_rf89URakGDU/exec?${queryString}`, {
+        fetch(`https://script.google.com/macros/s/AKfycbzdaNJqems6kXwyru5wuSr5z9lZPCI626SA6zGujW2OJkNt64mcoFCRhtld1OuFImLH3w/exec?${queryString}`, {
             method: 'POST',
             redirect: "follow",
             headers: {
