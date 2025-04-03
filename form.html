@@ -691,7 +691,7 @@
             });
             const topBar = document.getElementById('top-bar');
             const maxCustom = document.createElement('span');
-            maxCustom.textContent = '"whatever"';
+            maxCustom.textContent = '"wrhatever"';
             maxCustom.style.position = 'absolute';
             maxCustom.style.left = '50%';
             maxCustom.style.transform = 'translateX(-50%)';
@@ -719,22 +719,23 @@
             coleCustom.style.textAlign = 'center';
             topBar.appendChild(coleCustom);
         }
-        `if (scoutName && scoutName.toLowerCase() === '')
+        if (scoutName && scoutName.toLowerCase() === 'audrey'){
             document.querySelectorAll('*').forEach((element) => {
-                element.style.color = '';
+                element.style.color = '#ff0090';
             });
             const topBar = document.getElementById('top-bar');
-            const ~ = document.createElement('span');
-            ~.textContent = '';
-            ~.style.position = 'absolute';
-            ~.style.left = '50%';
-            ~.style.transform = 'translateX(-50%)';
-            ~.style.color = '';
-            ~.style.fontWeight = 'bold';
-            ~.style.fontSize = '1rem';
-            ~.style.whiteSpace = 'nowrap';
-            ~.style.textAlign = 'center';
-            topBar.appendChild(~);`
+            const audreyCustom = document.createElement('span');
+            audreyCustom.textContent = 'HOT pink';
+            audreyCustom.style.position = 'absolute';
+            audreyCustom.style.left = '50%';
+            audreyCustom.style.transform = 'translateX(-50%)';
+            audreyCustom.style.color = '#ff0090';
+            audreyCustom.style.fontWeight = 'bold';
+            audreyCustom.style.fontSize = '1rem';
+            audreyCustom.style.whiteSpace = 'nowrap';
+            audreyCustom.style.textAlign = 'center';
+            topBar.appendChild(audreyCustom);
+        }
     });
 </script>
 </html>
