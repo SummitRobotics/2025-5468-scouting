@@ -691,7 +691,7 @@
             });
             const topBar = document.getElementById('top-bar');
             const maxCustom = document.createElement('span');
-            maxCustom.textContent = '"wrhatever"';
+            maxCustom.textContent = '"whatever"';
             maxCustom.style.position = 'absolute';
             maxCustom.style.left = '50%';
             maxCustom.style.transform = 'translateX(-50%)';
@@ -764,6 +764,29 @@
                 endGameImage.alt = 'End Game - Eyal';
             }
         }
+        if (scoutName && scoutName.toLowerCase() === 'ashley'){
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#df60eb';
+            });
+            const topBar = document.getElementById('top-bar');
+            const eyalCustom = document.createElement('span');
+            eyalCustom.textContent = 'Teto Reference';
+            eyalCustom.style.position = 'absolute';
+            eyalCustom.style.color = '#df60eb';
+            eyalCustom.style.left = '50%';
+            eyalCustom.style.transform = 'translateX(-50%)';
+            eyalCustom.style.fontWeight = 'bold';
+            eyalCustom.style.fontSize = '1rem';
+            eyalCustom.style.whiteSpace = 'nowrap';
+            eyalCustom.style.textAlign = 'center';
+            topBar.appendChild (eyalCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'image.webp';
+                endGameImage.alt = 'End Game - Ash';
+            }
+        }
+        
     });
 </script>
 </html>
