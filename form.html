@@ -667,9 +667,9 @@
             developerMode.style.textAlign = 'center';
             topBar.appendChild(developerMode);
         }
-        else if (scoutName && scoutName.toLowerCase() === 'Natalie Hummel' | 'Natalie') {
+        if (scoutName && scoutName.toLowerCase() === 'natalie hummel') {
             document.querySelectorAll('*').forEach((element) => {   
-                element.style.color = 'purple';
+                element.style.color = '#bf60eb';
             });
             const topBar = document.getElementById('top-bar');
             const natalieCustom = document.createElement('span');
@@ -677,7 +677,7 @@
             natalieCustom.style.position = 'absolute';
             natalieCustom.style.left = '50%';
             natalieCustom.style.transform = 'translateX(-50%)';
-            natalieCustom.style.color = 'purple';
+            natalieCustom.style.color = '#bf60eb';
             natalieCustom.style.fontWeight = 'bold';
             natalieCustom.style.fontSize = '1rem';
             natalieCustom.style.whiteSpace = 'nowrap';
