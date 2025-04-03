@@ -25,11 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     submitButton.parentNode.insertBefore(pleaseWaitMessage, submitButton);
 
     const messages = [
-        { text: "Please wait...", probability: 35 },
-        { text: "Submitting...", probability: 35 },
-        { text: "Submitting?", probability: 15 },
-        { text: "Triton is the best", probability: 7.5 },
-        { text: "5468 is 546GREAT", probability: 7 },
+        { text: "Please wait...", probability: 50 },
+        { text: "Submitting...", probability: 45 },
+        { text: "Submitting?", probability: 4.5 },
         { text: "the cake is a lie...", probability: 0.5 }
     ];
 

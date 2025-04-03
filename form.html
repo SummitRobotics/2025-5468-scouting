@@ -668,7 +668,7 @@
             developerMode.style.textAlign = 'center';
             topBar.appendChild(developerMode);
         }
-        if (scoutName && scoutName === 'Natalie Hummel') {
+        if (scoutName && scoutName.toLowerCase() === 'natalie hummel') {
             document.querySelectorAll('*').forEach((element) => {   
                 element.style.color = '#bf60eb';
             });
@@ -719,6 +719,22 @@
             coleCustom.style.textAlign = 'center';
             topBar.appendChild(coleCustom);
         }
+        `if (scoutName && scoutName.toLowerCase() === '')
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '';
+            });
+            const topBar = document.getElementById('top-bar');
+            const ~ = document.createElement('span');
+            ~.textContent = '';
+            ~.style.position = 'absolute';
+            ~.style.left = '50%';
+            ~.style.transform = 'translateX(-50%)';
+            ~.style.color = '';
+            ~.style.fontWeight = 'bold';
+            ~.style.fontSize = '1rem';
+            ~.style.whiteSpace = 'nowrap';
+            ~.style.textAlign = 'center';
+            topBar.appendChild(~);`
     });
 </script>
 </html>
