@@ -1,6 +1,5 @@
 console.log('working, v2.5 - 4/1/2025');
-document.addEventListener("DOMContentLoaded", (event) => {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
 
     const minusButton = document.getElementById("minusL1");
     const plusButton = document.getElementById("plusL1");
@@ -19,6 +18,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const counterDiv4 = document.getElementById("cvL4");
 
     const submitButton = document.getElementById("submit");
+    const pleaseWaitMessage = document.createElement("div");
+    pleaseWaitMessage.style.display = "none";
+    pleaseWaitMessage.style.color = "blue";
+    pleaseWaitMessage.style.textAlign = "center";
+    submitButton.parentNode.insertBefore(pleaseWaitMessage, submitButton);
+
+    const messages = [
+        { text: "Please wait...", probability: 35 },
+        { text: "Submitting...", probability: 35 },
+        { text: "Submitting?", probability: 15 },
+        { text: "Triton is the best", probability: 7.5 },
+        { text: "5468 is 546GREAT", probability: 7 },
+        { text: "the cake is a lie...", probability: 0.5 }
+    ];
+
+    function getRandomMessage() {
+        const totalProbability = messages.reduce((sum, msg) => sum + msg.probability, 0);
+        const random = Math.random() * totalProbability;
+        let cumulative = 0;
+        for (const message of messages) {
+            cumulative += message.probability;
+            if (random <= cumulative) {
+                return message.text;
+            }
+        }
+        return messages[0].text; // Fallback to the first message
+    }
 
     let count1 = 0;
     let count2 = 0;
@@ -303,6 +329,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const scoutingSeat = urlParams.get('seat'); // Capture the scouting seat from the URL
 
     submitButton.addEventListener("click", (event) => {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Disable the submit button to prevent multiple submissions
+        submitButton.disabled = true;
+        // Show a random "Please wait" message
+        pleaseWaitMessage.textContent = getRandomMessage();
+        pleaseWaitMessage.style.display = "block";
+        console.log('Submit button clicked!');
+
+        // Your existing logic for handling the form submission
         const leavePos = document.querySelector('input[name="leave"]:checked');
         const barge = document.querySelector('input[name="status"]:checked');
         const coralPickup = document.querySelector('input[name="coralPickup"]:checked');
@@ -394,6 +430,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
         .catch((error) => {
             console.error('Error:', error);
+            // Re-enable the submit button if an error occurs
+            submitButton.disabled = false;
+            pleaseWaitMessage.textContent = 'An error occurred. Please try again.';
+            pleaseWaitMessage.style.color = 'red';
         });
     });
 });
