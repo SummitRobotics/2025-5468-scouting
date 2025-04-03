@@ -684,6 +684,23 @@
             natalieCustom.style.textAlign = 'center';
             topBar.appendChild(natalieCustom);
         }
+        if (scoutName && scoutName.toLowerCase() === 'max') {
+            document.querySelectorAll('*').forEach((element) => {   
+                element.style.color = '#df60eb';
+            });
+            const topBar = document.getElementById('top-bar');
+            const maxCustom = document.createElement('span');
+            maxCustom.textContent = '"the message can be whatever"';
+            maxCustom.style.position = 'absolute';
+            maxCustom.style.left = '50%';
+            maxCustom.style.transform = 'translateX(-50%)';
+            maxCustom.style.color = '#df60eb';
+            maxCustom.style.fontWeight = 'bold';
+            maxCustom.style.fontSize = '1rem';
+            maxCustom.style.whiteSpace = 'nowrap';
+            maxCustom.style.textAlign = 'center';
+            topBar.appendChild(maxCustom);
+        }
     });
 </script>
 </html>
