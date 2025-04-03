@@ -645,6 +645,45 @@
         if (scoutingSeat) {
             console.log(`Scouting Seat: ${scoutingSeat}`); // Log the scouting seat to verify
         }
+
+        // Check if the name is "jett" (case-insensitive)
+        if (scoutName && scoutName.toLowerCase() === 'jett') {
+            // Change the text color of all elements to #0066cc
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#0066cc';
+            });
+
+            // Add "Super Cool Developer Mode" to the top bar in the center
+            const topBar = document.getElementById('top-bar');
+            const developerMode = document.createElement('span');
+            developerMode.textContent = 'Super Cool Developer Mode';
+            developerMode.style.position = 'absolute';
+            developerMode.style.left = '50%';
+            developerMode.style.transform = 'translateX(-50%)';
+            developerMode.style.color = '#0066cc';
+            developerMode.style.fontWeight = 'bold';
+            developerMode.style.fontSize = '1rem'; // Adjust font size for smaller screens
+            developerMode.style.whiteSpace = 'nowrap'; // Prevent text wrapping
+            developerMode.style.textAlign = 'center';
+            topBar.appendChild(developerMode);
+        }
+        else if (scoutName && scoutName.toLowerCase() === 'Natalie Hummel' | 'Natalie') {
+            document.querySelectorAll('*').forEach((element) => {   
+                element.style.color = 'purple';
+            });
+            const topBar = document.getElementById('top-bar');
+            const natalieCustom = document.createElement('span');
+            natalieCustom.textContent = 'Super Cool Mentor Mode';
+            natalieCustom.style.position = 'absolute';
+            natalieCustom.style.left = '50%';
+            natalieCustom.style.transform = 'translateX(-50%)';
+            natalieCustom.style.color = 'purple';
+            natalieCustom.style.fontWeight = 'bold';
+            natalieCustom.style.fontSize = '1rem';
+            natalieCustom.style.whiteSpace = 'nowrap';
+            natalieCustom.style.textAlign = 'center';
+            topBar.appendChild(natalieCustom);
+        }
     });
 </script>
 </html>
