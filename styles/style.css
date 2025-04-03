@@ -2,7 +2,7 @@
  * THE FOLLOWING IS NOT, AND SHOULD NOT BE TAKEN AS LEGAL ADVICE. WE ARE NOT A LAW FIRM, HOWEVER, IF YOU WOULD EVER REQUIRE
  * ASSISTANCE FROM AN ACTUAL LAW FIRM, WOULD YOU LOOK NO FURTHER THAN THE EagleTeam. BECAUSE YOU DON'T JUST NEED A 
  * LEGAL TEAM, YOU NEED THE EagleTeam.
- * 
+ *
  * This code is liscenced under the legally distinct Cool Code 0 v1.0 liscence (CC0 v1.0). This means that the following
  * code is hereby declared to be viewed as the litteral coolest thing you have ever seen. The writers, owners, and
  * distributers of this code under the CC0 v1.0 liscense are automatically deemed as the most awesome people ever. Agreement
@@ -328,21 +328,16 @@ label {
     display: none !important;
     pointer-events: none !important;
   }
-}/*# sourceMappingURL=style.css.map */
-
-
-
-/*ADD THE BELOW TO THE .SCSS*/
-/*ALSO: cv and Tcv text size, +/- button size, border changes*/
+}
 #top-bar {
   position: fixed;
   top: 0;
   left: 0;
   border-bottom: 0.25em solid #14c600 !important;
-  background-color: rgb(28,28,28);
-  height:1.5em;
-  width:100%;
-  font-size:1.3em;
+  background-color: rgb(28, 28, 28);
+  height: 1.5em;
+  width: 100%;
+  font-size: 1.3em;
   z-index: 5; /*the starfish smiles upon us all*/
 }
 
@@ -351,9 +346,10 @@ img {
   z-index: 0;
 }
 
-.auto *:is(table,img) {
+.auto *:is(table, img) {
   border-color: #14c600 !important;
 }
+
 .auto .borderLeft {
   border-left: 0.5em solid #14c600 !important;
 }
@@ -376,9 +372,10 @@ img {
   background-color: rgba(20, 198, 0, 0.1882352941) !important;
 }
 
-.teleop *:is(table,img) {
+.teleop *:is(table, img) {
   border-color: #0014c6 !important;
 }
+
 .teleop .borderLeft {
   border-left: 0.5em solid #0014c6 !important;
 }
@@ -401,9 +398,10 @@ img {
   background-color: rgba(0, 20, 198, 0.1882352941) !important;
 }
 
-.endgame *:is(table,img) {
+.endgame *:is(table, img) {
   border-color: #c60014 !important;
 }
+
 .endgame .borderLeft {
   border-left: 0.5em solid #c60014 !important;
 }
@@ -424,5 +422,4 @@ img {
   border-bottom: 2px solid #c60014 !important;
   border-top: 2px solid #c60014 !important;
   background-color: rgba(198, 0, 20, 0.1882352941) !important;
-}
-
+}/*# sourceMappingURL=style.css.map */
