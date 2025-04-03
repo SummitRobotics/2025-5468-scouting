@@ -702,6 +702,23 @@
             maxCustom.style.textAlign = 'center';
             topBar.appendChild(maxCustom);
         }
+        if (scoutName && scoutName.toLowerCase() === 'cole') {
+            document.querySelectorAll('*').forEach((element) => {   
+                element.style.color = '#ed5c5c';
+            });
+            const topBar = document.getElementById('top-bar');
+            const coleCustom = document.createElement('span');
+            coleCustom.textContent = '#1 Scouter';
+            coleCustom.style.position = 'absolute';
+            coleCustom.style.left = '50%';
+            coleCustom.style.transform = 'translateX(-50%)';
+            coleCustom.style.color = '#ed5c5c';
+            coleCustom.style.fontWeight = 'bold';
+            coleCustom.style.fontSize = '1rem';
+            coleCustom.style.whiteSpace = 'nowrap';
+            coleCustom.style.textAlign = 'center';
+            topBar.appendChild(coleCustom);
+        }
     });
 </script>
 </html>
