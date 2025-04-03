@@ -718,6 +718,11 @@
             coleCustom.style.whiteSpace = 'nowrap';
             coleCustom.style.textAlign = 'center';
             topBar.appendChild(coleCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'IMG_2527.webp';
+                endGameImage.alt = 'End Game - Cole';
+            }
         }
         if (scoutName && scoutName.toLowerCase() === 'audrey'){
             document.querySelectorAll('*').forEach((element) => {
@@ -739,15 +744,20 @@
         if (scoutName && scoutName.toLowerCase() === 'eyal'){
             const topBar = document.getElementById('top-bar');
             const eyalCustom = document.createElement('span');
-         eyalCustom.textContent = 'EYAL';
-         eyalCustom.style.position = 'absolute';
-         eyalCustom.style.left = '50%';
-         eyalCustom.style.transform = 'translateX(-50%)';
-         eyalCustom.style.fontWeight = 'bold';
-         eyalCustom.style.fontSize = '1rem';
-         eyalCustom.style.whiteSpace = 'nowrap';
-         eyalCustom.style.textAlign = 'center';
+            eyalCustom.textContent = 'EYAL';
+            eyalCustom.style.position = 'absolute';
+            eyalCustom.style.left = '50%';
+            eyalCustom.style.transform = 'translateX(-50%)';
+            eyalCustom.style.fontWeight = 'bold';
+            eyalCustom.style.fontSize = '1rem';
+            eyalCustom.style.whiteSpace = 'nowrap';
+            eyalCustom.style.textAlign = 'center';
             topBar.appendChild (eyalCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'IMG_1230.webp';
+                endGameImage.alt = 'End Game - Eyal';
+            }
         }
     });
 </script>
