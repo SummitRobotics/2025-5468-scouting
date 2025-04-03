@@ -740,6 +740,11 @@
             audreyCustom.style.whiteSpace = 'nowrap';
             audreyCustom.style.textAlign = 'center';
             topBar.appendChild(audreyCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'IMG_9484.webp';
+                endGameImage.alt = 'End Game - Audrey';
+            }
         }
         if (scoutName && scoutName.toLowerCase() === 'eyal'){
             const topBar = document.getElementById('top-bar');
