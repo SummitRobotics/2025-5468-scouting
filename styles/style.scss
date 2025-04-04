@@ -21,6 +21,8 @@ $filterMain: brightness(115%) saturate(110%) hue-rotate(-15deg);
 //colors
 $chaosGreen: #14c600;
 $chaosGreenDark: #14c60030;
+$colorBlue: #AEC6CF;
+$colorRed: #FF6961;
 
 @mixin header {
         text-align: center;
@@ -426,51 +428,51 @@ img {
 }
       
 .teleop *:is(table,img) {
-        border-color: #0014c6 !important;
+        border-color: $colorBlue !important;
 }
 .teleop .borderLeft {
-        border-left: 0.5em solid #0014c6 !important;
+        border-left: 0.5em solid $colorBlue !important;
 }
       
 .teleop .borderRight {
-        border-right: 0.5em solid #0014c6 !important;
+        border-right: 0.5em solid $colorBlue !important;
 }
       
 .teleop .borderBottom {
-        border-bottom: 0.5em solid #0014c6 !important;
+        border-bottom: 0.5em solid $colorBlue !important;
 }
       
 .teleop .borderTop {
-        border-top: 0.5em solid #0014c6 !important;
+        border-top: 0.5em solid $colorBlue !important;
 }
       
 .teleop h2 {
-        border-bottom: 2px solid #0014c6 !important;
-        border-top: 2px solid #0014c6 !important;
+        border-bottom: 2px solid $colorBlue !important;
+        border-top: 2px solid $colorBlue !important;
         background-color: rgba(0, 20, 198, 0.1882352941) !important;
 }
       
 .endgame *:is(table,img) {
-        border-color: #c60014 !important;
+        border-color: $colorRed !important;
 }
 .endgame .borderLeft {
-        border-left: 0.5em solid #c60014 !important;
+        border-left: 0.5em solid $colorRed !important;
 }
       
 .endgame .borderRight {
-        border-right: 0.5em solid #c60014 !important;
+        border-right: 0.5em solid $colorRed !important;
 }
       
 .endgame .borderBottom {
-        border-bottom: 0.5em solid #c60014 !important;
+        border-bottom: 0.5em solid $colorRed !important;
 }
       
 .endgame .borderTop {
-        border-top: 0.5em solid #c60014 !important;
+        border-top: 0.5em solid $colorRed !important;
 }
       
 .endgame h2 {
-        border-bottom: 2px solid #c60014 !important;
-        border-top: 2px solid #c60014 !important;
+        border-bottom: 2px solid $colorRed !important;
+        border-top: 2px solid $colorRed !important;
         background-color: rgba(198, 0, 20, 0.1882352941) !important;
 }
