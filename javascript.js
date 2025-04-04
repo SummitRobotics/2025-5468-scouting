@@ -1,4 +1,4 @@
-console.log('working, v2.5 - 4/1/2025');
+console.log('working, v3.0 - 4/1/2025');
 document.addEventListener("DOMContentLoaded", () => {
 
     const minusButton = document.getElementById("minusL1");
