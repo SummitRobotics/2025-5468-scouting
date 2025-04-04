@@ -22,7 +22,9 @@ $filterMain: brightness(115%) saturate(110%) hue-rotate(-15deg);
 $chaosGreen: #14c600;
 $chaosGreenDark: #14c60030;
 $colorBlue: #AEC6CF;
+$colorBlueDark: #AEC6CF30;
 $colorRed: #FF6961;
+$colorRedDark: #FF696130;
 
 @mixin header {
         text-align: center;
@@ -38,6 +40,14 @@ $colorRed: #FF6961;
         &:hover {
                 border-color: $chaosGreen;
                 color:$chaosGreen;
+        }
+        .teleop &:hover {
+                border-color: $colorBlue;
+                color: $colorBlue;
+        }
+        .endgame &:hover {
+                border-color: $colorRed;
+                color: $colorRed; 
         }
 }
 
@@ -155,12 +165,35 @@ input[type=radio], input[type=checkbox] {
         transition: $animationTransition1;
         cursor: pointer;
 
+        .teleop & {
+                outline: 0.2em solid $colorBlueDark;
+        }
+        .endgame & {
+                outline: 0.2em solid $colorRedDark;
+        }
+
         &:hover, 
         &:checked {
                 outline: 0.2em solid $chaosGreen;
         }
         &:checked {
                 background: $chaosGreen;    
+        }
+
+        .teleop &:hover, 
+        .teleop &:checked {
+                outline: 0.2em solid $colorBlue;
+        }
+        .teleop &:checked {
+                background: $colorBlue;    
+        }
+
+        .endgame &:hover, 
+        .endgame &:checked {
+                outline: 0.2em solid $colorRed;
+        }
+        .endgame &:checked {
+                background: $colorRed;    
         }
 
 }
@@ -232,6 +265,8 @@ span[id^=cv], span[id^=Tcv] { //ripoff RegEx
         border-radius: 0.5em;
         display: inline-block !important; // Ensure buttons are inline-block
 }
+
+
 
 img {
         width: 50%;
