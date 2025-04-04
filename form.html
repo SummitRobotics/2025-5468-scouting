@@ -769,21 +769,39 @@
                 element.style.color = '#df60eb';
             });
             const topBar = document.getElementById('top-bar');
-            const eyalCustom = document.createElement('span');
-            eyalCustom.textContent = 'Teto Reference';
-            eyalCustom.style.position = 'absolute';
-            eyalCustom.style.color = '#df60eb';
-            eyalCustom.style.left = '50%';
-            eyalCustom.style.transform = 'translateX(-50%)';
-            eyalCustom.style.fontWeight = 'bold';
-            eyalCustom.style.fontSize = '1rem';
-            eyalCustom.style.whiteSpace = 'nowrap';
-            eyalCustom.style.textAlign = 'center';
-            topBar.appendChild (eyalCustom);
+            const ashCustom = document.createElement('span');
+            ashCustom.textContent = 'Teto Reference';
+            ashCustom.style.position = 'absolute';
+            ashCustom.style.color = '#df60eb';
+            ashCustom.style.left = '50%';
+            ashCustom.style.transform = 'translateX(-50%)';
+            ashCustom.style.fontWeight = 'bold';
+            ashCustom.style.fontSize = '1rem';
+            ashCustom.style.whiteSpace = 'nowrap';
+            ashCustom.style.textAlign = 'center';
+            topBar.appendChild (ashCustom);
             const endGameImage = document.querySelector('.endgame img');
             if (endGameImage) {
                 endGameImage.src = 'image.webp';
                 endGameImage.alt = 'End Game - Ash';
+            }
+        }
+        if (scoutName && scoutName.toLowerCase() === 'izzy'){
+            const topBar = document.getElementById('top-bar');
+            const ashCustom = document.createElement('span');
+            ashCustom.textContent = 'Gatorade';
+            ashCustom.style.position = 'absolute';
+            ashCustom.style.left = '50%';
+            ashCustom.style.transform = 'translateX(-50%)';
+            ashCustom.style.fontWeight = 'bold';
+            ashCustom.style.fontSize = '1rem';
+            ashCustom.style.whiteSpace = 'nowrap';
+            ashCustom.style.textAlign = 'center';
+            topBar.appendChild (ashCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'image (1).webp';
+                endGameImage.alt = 'End Game - izzy';
             }
         }
     });
