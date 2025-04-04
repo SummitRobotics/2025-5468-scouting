@@ -788,20 +788,38 @@
         }
         if (scoutName && scoutName.toLowerCase() === 'izzy'){
             const topBar = document.getElementById('top-bar');
-            const ashCustom = document.createElement('span');
-            ashCustom.textContent = 'Gatorade';
-            ashCustom.style.position = 'absolute';
-            ashCustom.style.left = '50%';
-            ashCustom.style.transform = 'translateX(-50%)';
-            ashCustom.style.fontWeight = 'bold';
-            ashCustom.style.fontSize = '1rem';
-            ashCustom.style.whiteSpace = 'nowrap';
-            ashCustom.style.textAlign = 'center';
-            topBar.appendChild (ashCustom);
+            const izzyCustom = document.createElement('span');
+            izzyCustom.textContent = 'Gatorade';
+            izzyCustom.style.position = 'absolute';
+            izzyCustom.style.left = '50%';
+            izzyCustom.style.transform = 'translateX(-50%)';
+            izzyCustom.style.fontWeight = 'bold';
+            izzyCustom.style.fontSize = '1rem';
+            izzyCustom.style.whiteSpace = 'nowrap';
+            izzyCustom.style.textAlign = 'center';
+            topBar.appendChild (izzyCustom);
             const endGameImage = document.querySelector('.endgame img');
             if (endGameImage) {
                 endGameImage.src = 'image (1).webp';
                 endGameImage.alt = 'End Game - izzy';
+            }
+        }
+        if (scoutName && scoutName.toLowerCase() === 'evelyn'){
+            const topBar = document.getElementById('top-bar');
+            const evelynCustom = document.createElement('span');
+            evelynCustom.textContent = 'cute doggo';
+            evelynCustom.style.position = 'absolute';
+            evelynCustom.style.left = '50%';
+            evelynCustom.style.transform = 'translateX(-50%)';
+            evelynCustom.style.fontWeight = 'bold';
+            evelynCustom.style.fontSize = '1rem';
+            evelynCustom.style.whiteSpace = 'nowrap';
+            evelynCustom.style.textAlign = 'center';
+            topBar.appendChild (izzyCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'IMG_1304s.webp';
+                endGameImage.alt = 'End Game - evelyn';
             }
         }
     });
