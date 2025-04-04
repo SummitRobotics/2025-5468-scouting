@@ -469,6 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.justifyContent = "center";
         modal.style.alignItems = "center";
         modal.style.zIndex = "1000";
+        modal.className = "modal";
 
         // Create the modal content
         const modalContent = document.createElement("div");
@@ -478,6 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalContent.style.textAlign = "center";
         modalContent.style.boxShadow = "-8px 0px 8px rgba(24,24,24,0.2), 8px 0px 24px rgba(24,24,24,0.2), 0px 8px 8px rgba(24,24,24,0.2), 0px -8px 24px rgba(24,24,24,0.2)";
         modalContent.style.border = "2px solid #14c600";
+        modalContent.className = "modalContent";
 
         // Add the message
         const message = document.createElement("p");
