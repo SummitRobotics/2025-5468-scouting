@@ -1,4 +1,5 @@
 # 5468scouting
 to make scouting suck a little less
-
-netlify lag test v0.1 (will delete later)
+[v3.1 standard build](https://5468scouting.netlify.app)
+[v1.0 branch build](https://5468scoutingbranch.netlify.app)
+Release 2.0
