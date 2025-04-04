@@ -32,7 +32,7 @@ hr {
 }
 
 .tableNormal {
-  margin: 24px auto;
+  margin: 2em auto;
   background-color: rgb(20, 20, 20);
   box-shadow: -8px 0px 8px rgba(20, 20, 20, 0.2), 8px 0px 24px rgba(20, 20, 20, 0.2), 0px 8px 8px rgba(20, 20, 20, 0.2), 0px -8px 24px rgba(20, 20, 20, 0.2);
   width: 50%;
@@ -60,8 +60,11 @@ hr {
 }
 .tableNormal td {
   padding: 4px 6px;
-  min-width: 50px !important;
+  min-width: 50px;
   white-space: nowrap;
+}
+.tableNormal td strong {
+  font-size: 1.4em;
 }
 .tableNormal .noShow:hover {
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
@@ -73,11 +76,11 @@ hr {
   width: 77.7777777777%;
   box-shadow: -8px 0px 8px rgba(24, 24, 24, 0.2), 8px 0px 24px rgba(24, 24, 24, 0.2);
 }
-#container .containerInner {
+#container #containerInner {
   padding: 8px 16px;
   background-color: rgb(24, 24, 24);
 }
-#container .containerInner h2 {
+#container #containerInner h2 {
   text-align: center;
   text-shadow: 2px 2px 8px rgba(61, 61, 61, 0.5), -2px 2px 8px rgba(61, 61, 61, 0.5), 2px -2px 8px rgba(61, 61, 61, 0.5), -2px -2px 8px rgba(61, 61, 61, 0.5);
   font-size: 2em;
@@ -192,21 +195,21 @@ span[id^=cv], span[id^=Tcv] {
   font-size: 3em;
 }
 
-.Jbutton {
+.Jbutton, .modal .modalContent button {
   background-color: black;
   border: 2px solid rgba(250, 250, 250, 0.5);
   color: white;
   padding: 0.5em;
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
-  font-size: 1em;
+  font-size: 1.3em;
   cursor: pointer;
   margin: 0.3em 0.7em;
-  min-width: 4em;
-  min-height: 2.4em;
+  min-width: 3em;
+  min-height: 3em;
   border-radius: 0.5em;
   display: inline-block !important;
 }
-.Jbutton:hover {
+.Jbutton:hover, .modal .modalContent button:hover {
   border-color: #14c600;
   color: #14c600;
 }
@@ -292,6 +295,35 @@ label {
 :is(.borderLeft, .borderRight, .borderBottom, .borderTop):hover {
   filter: brightness(115%) saturate(110%) hue-rotate(-15deg);
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal .modalContent {
+  background-color: rgb(24, 24, 24);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: -8px 0px 8px rgba(24, 24, 24, 0.2), 8px 0px 24px rgba(24, 24, 24, 0.2), 0px 8px 8px rgba(24, 24, 24, 0.2), 0px -8px 24px rgba(24, 24, 24, 0.2);
+  border: 2px solid #14c600;
+}
+.modal .modalContent p {
+  color: white;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+.modal .modalContent button {
+  margin: 10px;
 }
 
 @media only screen and (max-width: 1100px) {

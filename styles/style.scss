@@ -61,8 +61,8 @@ hr {
         font-size: 3em;
 }
 
-.tableNormal { //original design from another project by 5stygian, the code has been modified for this project
-        margin: 24px auto;
+.tableNormal { //original design from another project by 5stygian, the code has been modified for this project.
+        margin: 2em auto;
         background-color: rgb(20,20,20);
         box-shadow: -8px 0px 8px rgba(20,20,20,0.2), 8px 0px 24px rgba(20,20,20,0.2), 0px 8px 8px rgba(20,20,20,0.2), 0px -8px 24px rgba(20,20,20,0.2);
         width: 50%;
@@ -94,9 +94,13 @@ hr {
 
         td {
                 padding: 4px 6px;
-                min-width: 50px !important;
+                min-width: 50px;
                 white-space: nowrap; // Prevent line breaks within the cell
 
+        }
+
+        td strong {
+                font-size: 1.4em;
         }
 
         .noShow:hover {
@@ -110,7 +114,7 @@ hr {
         width: 77.7777777777%; // lucky number 7!
         box-shadow: -8px 0px 8px rgba(24,24,24,0.2), 8px 0px 24px rgba(24,24,24,0.2);
 
-        .containerInner {
+        #containerInner {
                 padding: 8px 16px;
                 background-color: rgb(24,24,24);
 
@@ -218,11 +222,11 @@ span[id^=cv], span[id^=Tcv] { //ripoff RegEx
 
 .Jbutton {
         @include elementDefault;
-        font-size: 1em;
+        font-size: 1.3em;
         cursor: pointer;
         margin: 0.3em 0.7em;
-        min-width: 4em;
-        min-height: 2.4em;
+        min-width: 3em;
+        min-height: 3em;
         border-radius: 0.5em;
         display: inline-block !important; // Ensure buttons are inline-block
 }
