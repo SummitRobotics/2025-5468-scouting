@@ -1,6 +1,5 @@
-console.log('working, api test v1.11');
-document.addEventListener("DOMContentLoaded", (event) => {
-    event.preventDefault();
+console.log('working, v2.5 - 4/1/2025');
+document.addEventListener("DOMContentLoaded", () => {
 
     const minusButton = document.getElementById("minusL1");
     const plusButton = document.getElementById("plusL1");
@@ -19,6 +18,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const counterDiv4 = document.getElementById("cvL4");
 
     const submitButton = document.getElementById("submit");
+    const pleaseWaitMessage = document.createElement("div");
+    pleaseWaitMessage.style.display = "none";
+    pleaseWaitMessage.style.color = "blue";
+    pleaseWaitMessage.style.textAlign = "center";
+    submitButton.parentNode.insertBefore(pleaseWaitMessage, submitButton);
+
+    const messages = [
+        { text: "Please wait...", probability: 50 },
+        { text: "Submitting...", probability: 45 },
+        { text: "Submitting?", probability: 4.5 },
+        { text: "the cake is a lie...", probability: 0.5 }
+    ];
+
+    function getRandomMessage() {
+        const totalProbability = messages.reduce((sum, msg) => sum + msg.probability, 0);
+        const random = Math.random() * totalProbability;
+        let cumulative = 0;
+        for (const message of messages) {
+            cumulative += message.probability;
+            if (random <= cumulative) {
+                return message.text;
+            }
+        }
+        return messages[0].text; // Fallback to the first message
+    }
 
     let count1 = 0;
     let count2 = 0;
@@ -34,6 +58,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     plusButton.addEventListener("click", (event) => {
         count1++;
+        
         counterDiv.textContent = count1;
     });
 
@@ -45,7 +70,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton2.addEventListener("click", (event) => {
-        count2++;
+        if (count2 < 12) {
+            count2++;
+        }
         counterDiv2.textContent = count2;
     });
 
@@ -57,7 +84,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton3.addEventListener("click", (event) => {
-        count3++;
+        if (count3 < 12) {
+            count3++;
+        }
         counterDiv3.textContent = count3;
     });
 
@@ -69,7 +98,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     plusButton4.addEventListener("click", (event) => {
-        count4++;
+        if (count4 < 12) {
+            count4++;
+        }
         counterDiv4.textContent = count4;
     });
 
@@ -169,7 +200,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     TplusButton2.addEventListener("click", (event) => {
-        Tcount2++;
+        if (Tcount2 < 12) {
+            Tcount2++;
+        }
         TcounterDiv2.textContent = Tcount2;
     });
 
@@ -181,7 +214,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     TplusButton3.addEventListener("click", (event) => {
-        Tcount3++;
+        if (Tcount3 < 12) {
+            Tcount3++;
+        }
         TcounterDiv3.textContent = Tcount3;
     });
 
@@ -193,7 +228,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     TplusButton4.addEventListener("click", (event) => {
-        Tcount4++;
+        if (Tcount4 < 12) {
+            Tcount4++;
+        }
         TcounterDiv4.textContent = Tcount4;
     });
 
@@ -251,21 +288,76 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     document.getElementById('defenseY').addEventListener("click", () => {
-        document.getElementById("defenseEffectRow").style.display = "table-row";
+        document.getElementById("defenseTable").style.display = "table";
     });
 
     document.getElementById('defenseN').addEventListener("click", () => {
-        document.getElementById("defenseEffectRow").style.display = "none";
+        document.getElementById("defenseTable").style.display = "none";
+    });
+    
+    document.getElementById('fieldY').addEventListener("click", () => {
+        document.querySelectorAll(".onField").forEach((element) => {
+            element.style.display = "table";
+        });
     });
 
+    document.getElementById('fieldN').addEventListener("click", () => {
+        document.querySelectorAll(".onField").forEach((element) => {
+            element.style.display = "none";
+        });
+    });
+    
+    document.getElementById('leaveY').addEventListener("click", () => {
+        document.querySelectorAll(".auto .onField ~ .onField").forEach((element) => {
+            element.style.display = "table";
+        });
+    });
+
+    document.getElementById('leaveN').addEventListener("click", () => {
+        document.querySelectorAll(".auto .onField ~ .onField").forEach((element) => {
+            element.style.display = "none";
+        });
+    });
+    
     // Read URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const scoutName = urlParams.get('name');
     const matchNum = urlParams.get('match');
     const teamNumber = urlParams.get('team');
+    const scoutingSeat = urlParams.get('seat'); // Capture the scouting seat from the URL
 
     submitButton.addEventListener("click", (event) => {
-        const startPos = document.querySelector('input[name="startPos"]:checked');
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Get the value of the ranking points
+        const rankPoints = document.getElementById("rankPoints").value;
+        console.log(`Rank Points: ${rankPoints}`);
+
+        // Check if ranking points are zero
+        if (rankPoints === "0") {
+            console.log("Rank Points are zero. Showing confirmation popup.");
+            showConfirmationPopup(() => {
+                // If "Yes" is clicked, proceed with submission
+                handleFormSubmission();
+            });
+            return; // Stop further execution until user confirms
+        }
+
+        // Proceed with form submission if ranking points are not zero
+        handleFormSubmission();
+    });
+
+    function handleFormSubmission() {
+        // Disable the submit button to prevent multiple submissions
+        submitButton.disabled = true;
+
+        // Show a random "Please wait" message
+        pleaseWaitMessage.textContent = getRandomMessage();
+        pleaseWaitMessage.style.display = "block";
+        console.log("Submit button clicked!");
+
+        // Your existing logic for handling the form submission
         const leavePos = document.querySelector('input[name="leave"]:checked');
         const barge = document.querySelector('input[name="status"]:checked');
         const coralPickup = document.querySelector('input[name="coralPickup"]:checked');
@@ -274,7 +366,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const driverSkill = document.querySelector('input[name="skill"]:checked');
         const defense = document.querySelector('input[name="defense"]:checked');
         const speed = document.querySelector('input[name="speed"]:checked');
+        const robotOnField = document.querySelector('input[name="field"]:checked');
         const notes = document.getElementById("notes").value;
+        const rankPoints = document.getElementById("rankPoints").value;
+
+        // Generate the current date and time in the desired format
+        const now = new Date();
+        const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()} ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+
         const total = 3 * (leavePos ? 1 : 0)
                     + 3 * count1 + 4 * count2 + 6 * count3 + 7 * count4 + 4 * countN + 6 * countP
                     + 2 * Tcount1 + 3 * Tcount2 + 4 * Tcount3 + 5 * Tcount4 + 4 * TcountN + 6 * TcountP
@@ -287,14 +386,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.querySelectorAll('input[name="assess"]:checked').forEach((checkbox) => {
             assessments.push(checkbox.id);
         });
+        const defenseAssess = [];
+        document.querySelectorAll('input[name="dSkill"]:checked').forEach((checkbox) => {
+            defenseAssess.push(checkbox.id);
+        });
+        if (assessments.length === 0) {
+            assessments.push("null");
+        }
+        if (defenseAssess.length === 0) {
+            defenseAssess.push("null");
+        }
+        console.log(defenseAssess);
 
         const data = {
+            timestamp: formattedDate, // Add the timestamp as the first field
             scoutName: scoutName,
             matchNum: matchNum,
+            scoutingSeat: scoutingSeat, // Add the scouting seat to the data
             teamNumber: teamNumber,
-            startPos: startPos ? startPos.nextElementSibling.textContent : null,
+            robotOnField: robotOnField ? robotOnField.nextElementSibling.textContent : null,
             leavePos: leavePos ? leavePos.nextElementSibling.textContent : null,
-            counter1: count1,
+            counter1: count1,   
             counter2: count2,
             counter3: count3,
             counter4: count4,
@@ -314,14 +426,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
             coopertition: coopertition ? coopertition.nextElementSibling.textContent : null,
             driverSkill: driverSkill ? driverSkill.nextElementSibling.textContent : null,
             defense: defense ? defense.nextElementSibling.textContent : null,
+            defenseAssess: defenseAssess.join(', '),
             speed: speed ? speed.nextElementSibling.textContent : null,
             assessments: assessments.join(', '),
+            rankPoints: rankPoints,
             notes: notes,
             total: total
         };
         const queryString = new URLSearchParams(data).toString();
 
-        fetch(`https://script.google.com/macros/s/AKfycbyftpgHjtuULEkMedTrSzINcb6vSgLAkeUu9gaFG0k7JPh-OpZGjFvhQ7KQmZnT28TrJw/exec?${queryString}`, {
+        fetch(`https://script.google.com/macros/s/AKfycbz2UPfTx8eFaOaHe-0Wdw3o3gXzAfp4-UnMadp_XIFjQMFkH6tgTXQMrmJ38OmqpMzpKw/exec?${queryString}`, {
             method: 'POST',
             redirect: "follow",
             headers: {
@@ -335,6 +449,91 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
         .catch((error) => {
             console.error('Error:', error);
+            // Re-enable the submit button if an error occurs
+            submitButton.disabled = false;
+            pleaseWaitMessage.textContent = 'An error occurred. Please try again.';
+            pleaseWaitMessage.style.color = 'red';
         });
-    });
+    }
+
+    function showConfirmationPopup(onConfirm) {
+        // Create the modal container
+        const modal = document.createElement("div");
+        modal.style.position = "fixed";
+        modal.style.top = "0";
+        modal.style.left = "0";
+        modal.style.width = "100%";
+        modal.style.height = "100%";
+        modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        modal.style.display = "flex";
+        modal.style.justifyContent = "center";
+        modal.style.alignItems = "center";
+        modal.style.zIndex = "1000";
+        modal.className = "modal";
+
+        // Create the modal content
+        const modalContent = document.createElement("div");
+        modalContent.style.backgroundColor = "rgb(24, 24, 24)";
+        modalContent.style.padding = "20px";
+        modalContent.style.borderRadius = "8px";
+        modalContent.style.textAlign = "center";
+        modalContent.style.boxShadow = "-8px 0px 8px rgba(24,24,24,0.2), 8px 0px 24px rgba(24,24,24,0.2), 0px 8px 8px rgba(24,24,24,0.2), 0px -8px 24px rgba(24,24,24,0.2)";
+        modalContent.style.border = "2px solid #14c600";
+        modalContent.className = "modalContent";
+
+        // Add the message
+        const message = document.createElement("p");
+        message.textContent = "Ranking points are set to zero. Are you sure you want to submit?";
+        message.style.color = "white";
+        message.style.fontSize = "1.5em";
+        message.style.marginBottom = "20px";
+        modalContent.appendChild(message);
+
+        // Add "Yes" button
+        const yesButton = document.createElement("button");
+        yesButton.textContent = "Yes";
+        yesButton.className = "Jbutton"; // Use your existing button styles
+        yesButton.style.margin = "10px";
+        yesButton.addEventListener("click", () => {
+            modal.remove(); // Remove the modal
+            onConfirm(); // Call the confirmation callback
+        });
+        modalContent.appendChild(yesButton);
+
+        // Add "No" button
+        const noButton = document.createElement("button");
+        noButton.textContent = "No";
+        noButton.className = "Jbutton"; // Use your existing button styles
+        noButton.style.margin = "10px";
+        noButton.addEventListener("click", () => {
+            modal.remove(); // Remove the modal
+            console.log("Submission canceled by the user.");
+        });
+        modalContent.appendChild(noButton);
+
+        // Add the modal content to the modal container
+        modal.appendChild(modalContent);
+
+        // Add the modal to the document body
+        document.body.appendChild(modal);
+    }
+
+    function getRandomMessage() {
+        const messages = [
+            { text: "Please wait...", probability: 50 },
+            { text: "Submitting...", probability: 45 },
+            { text: "Submitting?", probability: 4.5 },
+            { text: "The cake is a lie...", probability: 0.5 },
+        ];
+        const totalProbability = messages.reduce((sum, msg) => sum + msg.probability, 0);
+        const random = Math.random() * totalProbability;
+        let cumulative = 0;
+        for (const message of messages) {
+            cumulative += message.probability;
+            if (random <= cumulative) {
+                return message.text;
+            }
+        }
+        return messages[0].text; // Fallback to the first message
+    }
 });

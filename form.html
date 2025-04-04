@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Thank you to our sponsors and mentors -->
+<!-- HTML and CSS done by Max III -->
+<!-- Javascript and API work done by Jett-->
 <html lang="en">
 <head>
     <title>2025 Scouting Form</title>
@@ -9,200 +12,185 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
+    <div id="top-bar-container">
+    <div id="top-bar">
+        <span id="matchNumInput" style="position:relative; left: 3px;">Match #</span>
+        <span id="team" style="position:fixed; right: 3px;">Team:</span>
+    </div>
+    </div>
     <div id="container">
         <div class="containerInner">
             <h1 class="headerMain">5468 Scouting Form 2025</h1>
-            <hr>
-            <table class="tableNormal">
-                <tr>
-                    <th>
-                        <span class="header">Match #</span> 
-                    </th>
-                    <th>
-                        <span class="header">Team #</span> 
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="number" id="matchNumInput" readonly>
-                    </td>
-                    <td>
-                        <input type="number" id="team" readonly>
-                    </td>
-                </tr>
-            </table>
-            <h2>Auto Phase</h2>
-            <table class="tableNormal">
-                <tr>
-                    <th colspan="3">
-                        <span class="header">Starting Position</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="startPos" id="startL"> <label for="startL">Left</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="startPos" id="startC"> <label for="startC">Center</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="startPos" id="startR"> <label for="startR">Right</label>
-                    </td>
-                </tr>
-            </table>
-
-            <table class="tableNormal">
-                <tr>
-                    <th colspan="2">
-                        <span class="header">Did robot leave starting position?</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="leave" id="leaveY" value="Yes"> <label for="leaveY">Yes</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="leave" id="leaveN" value="No"> <label for="leaveN">No</label>
-                    </td>
-                </tr>
-            </table>
-            <table class="tableNormal">
-                <tr>
-                    <th colspan="2" class="borderBottom">
-                        <span class="header">Coral</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td class="borderRight borderTop">
-                        <strong>L1</strong>
-                    </td>
-                    <td class="borderLeft borderTop">
-                        <strong>L2</strong>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <button id="plusL1" class="Jbutton">+1</button>
-                    </td>
-                    <td class="borderLeft">
-                        <button id="plusL2" class="Jbutton">+1</button>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <span id="cvL1" >0</span>
-                    </td>
-                    <td class="borderLeft">
-                        <span id="cvL2" >0</span>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight borderBottom">
-                        <button id="minusL1" class="Jbutton">-1</button>
-                    </td>
-                    <td class="borderLeft borderBottom">
-                        <button id="minusL2" class="Jbutton">-1</button>
-                    </td>    
-                </tr>
-                <tr>
-                    <td class="borderRight borderTop">
-                        <strong>L3</strong>
-                    </td>
-                    <td class="borderLeft borderTop">
-                        <strong>L4</strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <button id="plusL3" class="Jbutton">+1</button>
-                    </td>
-                    <td class="borderLeft">
-                        <button id="plusL4" class="Jbutton">+1</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <span id="cvL3" >0</span>
-                    </td>
-                    <td class="borderLeft">
-                        <span id="cvL4" >0</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <button id="minusL3" class="Jbutton">-1</button>
-                    </td>
-                    <td class="borderLeft">
-                        <button id="minusL4" class="Jbutton">-1</button>
-                    </td>
-            </table>
-            <!-- ALGAE -->
-            <table class="tableNormal">
-                <tr>
-                    <th colspan="2" class="borderBottom">
-                        <span class="header">Algae</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td class="borderRight borderTop">
-                        <strong>Net</strong>
-                    </td>
-                    <td class="borderLeft borderTop">
-                        <strong>Scrub</strong>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <button id="plusN" class="Jbutton">+1</button>
-                    </td>
-                    <td class="borderLeft">
-                        <button id="plusS" class="Jbutton">+1</button>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <span id="cvN" >0</span>
-                    </td>
-                    <td class="borderLeft">
-                        <span id="cvS" >0</span>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight borderBottom">
-                        <button id="minusN" class="Jbutton">-1</button>
-                    </td>
-                    <td class="borderLeft borderBottom">
-                        <button id="minusS" class="Jbutton">-1</button>
-                    </td>    
-                </tr>
-                <tr>
-                    <td colspan="2" class="borderTop">
-                        <strong>Processor</strong>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button id="plusP" class="Jbutton">+1</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <span id="cvP" >0</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button id="minusP" class="Jbutton">-1</button>
-                    </td>
-            </table>
-            <h2>Teleop</h2>
+            <div class="auto">
+                <h2>Auto Phase</h2>
+                <table class="tableNormal">
+                    <tr>
+                        <th colspan="2">
+                            <span class="header">Robot on Field?</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="field" id="fieldY" value="Yes"> <label for="fieldY">Yes</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="field" id="fieldN" value="No"> <label for="fieldN">No</label>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tableNormal onField">
+                    <tr>
+                        <th colspan="2">
+                            <span class="header">Did robot leave starting position?</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="leave" id="leaveY" value="Yes"> <label for="leaveY">Yes</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="leave" id="leaveN" value="No"> <label for="leaveN">No</label>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tableNormal onField">
+                    <tr>
+                        <th colspan="2" class="borderBottom">
+                            <span class="header">Auto Coral</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="borderRight borderTop">
+                            <strong>L4</strong>
+                        </td>
+                        <td class="borderLeft borderTop">
+                            <strong>L3</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borderRight">
+                            <button id="plusL4" class="Jbutton">+1</button>
+                        </td>
+                        <td class="borderLeft">
+                            <button id="plusL3" class="Jbutton">+1</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borderRight">
+                            <span id="cvL4" >0</span>
+                        </td>
+                        <td class="borderLeft">
+                            <span id="cvL3" >0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borderRight borderBottom">
+                            <button id="minusL4" class="Jbutton">-1</button>
+                        </td>
+                        <td class="borderLeft borderBottom">
+                            <button id="minusL3" class="Jbutton">-1</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borderRight borderTop">
+                            <strong>L2</strong>
+                        </td>
+                        <td class="borderLeft borderTop">
+                            <strong>L1/Trough</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borderRight">
+                            <button id="plusL2" class="Jbutton">+1</button>
+                        </td>
+                        <td class="borderLeft">
+                            <button id="plusL1" class="Jbutton">+1</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borderRight">
+                            <span id="cvL2" >0</span>
+                        </td>
+                        <td class="borderLeft">
+                            <span id="cvL1" >0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borderRight">
+                            <button id="minusL2" class="Jbutton">-1</button>
+                        </td>
+                        <td class="borderLeft">
+                            <button id="minusL1" class="Jbutton">-1</button>
+                        </td>
+                </table>
+                <!-- ALGAE -->
+                <table class="tableNormal onField">
+                    <tr>
+                        <th colspan="2" class="borderBottom">
+                            <span class="header">Auto Algae</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="borderRight borderTop">
+                            <strong>Net</strong>
+                        </td>
+                        <td class="borderLeft borderTop">
+                            <strong>Processor</strong>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="borderRight">
+                            <button id="plusN" class="Jbutton">+1</button>
+                        </td>
+                        <td class="borderLeft">
+                            <button id="plusP" class="Jbutton">+1</button>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="borderRight">
+                            <span id="cvN" >0</span>
+                        </td>
+                        <td class="borderLeft">
+                            <span id="cvP" >0</span>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="borderRight borderBottom">
+                            <button id="minusN" class="Jbutton">-1</button>
+                        </td>
+                        <td class="borderLeft borderBottom">
+                            <button id="minusP" class="Jbutton">-1</button>
+                        </td>    
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="borderTop">
+                            <strong>Scrub</strong>
+                        </td>
+    
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="plusS" class="Jbutton">+1</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span id="cvS" >0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="minusS" class="Jbutton">-1</button>
+                        </td>
+                </table>
+            </div>
+            
+            
+            <div class="teleop onField">
+                <h2>Teleop</h2>
             <table class="tableNormal">
                 <tr>
                     <th colspan="2" class="borderBottom">
@@ -211,69 +199,66 @@
                 </tr>
                 <tr>
                     <td class="borderRight borderTop">
-                        <strong>L1</strong>
-                    </td>
-                    <td class="borderLeft borderTop">
-                        <strong>L2</strong>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <button id="TplusL1" class="Jbutton">+1</button>
-                    </td>
-                    <td class="borderLeft">
-                        <button id="TplusL2" class="Jbutton">+1</button>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight">
-                        <span id="TcvL1" >0</span>
-                    </td>
-                    <td class="borderLeft">
-                        <span id="TcvL2" >0</span>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="borderRight borderBottom">
-                        <button id="TminusL1" class="Jbutton">-1</button>
-                    </td>
-                    <td class="borderLeft borderBottom">
-                        <button id="TminusL2" class="Jbutton">-1</button>
-                    </td>    
-                </tr>
-                <tr>
-                    <td class="borderRight borderTop">
-                        <strong>L3</strong>
-                    </td>
-                    <td class="borderLeft borderTop">
                         <strong>L4</strong>
                     </td>
+                    <td class="borderLeft borderTop">
+                        <strong>L3</strong>
+                    </td>
                 </tr>
                 <tr>
                     <td class="borderRight">
-                        <button id="TplusL3" class="Jbutton">+1</button>
-                    </td>
-                    <td class="borderLeft">
                         <button id="TplusL4" class="Jbutton">+1</button>
                     </td>
+                    <td class="borderLeft">
+                        <button id="TplusL3" class="Jbutton">+1</button>
+                    </td>
                 </tr>
                 <tr>
                     <td class="borderRight">
-                        <span id="TcvL3" >0</span>
-                    </td>
-                    <td class="borderLeft">
                         <span id="TcvL4" >0</span>
                     </td>
+                    <td class="borderLeft">
+                        <span id="TcvL3" >0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="borderRight borderBottom">
+                        <button id="TminusL4" class="Jbutton">-1</button>
+                    </td>
+                    <td class="borderLeft borderBottom">
+                        <button id="TminusL3" class="Jbutton">-1</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="borderRight borderTop">
+                        <strong>L2</strong>
+                    </td>
+                    <td class="borderLeft borderTop">
+                        <strong>L1/Trough</strong>
+                    </td>
                 </tr>
                 <tr>
                     <td class="borderRight">
-                        <button id="TminusL3" class="Jbutton">-1</button>
+                        <button id="TplusL2" class="Jbutton">+1</button>
                     </td>
                     <td class="borderLeft">
-                        <button id="TminusL4" class="Jbutton">-1</button>
+                        <button id="TplusL1" class="Jbutton">+1</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="borderRight">
+                        <span id="TcvL2" >0</span>
+                    </td>
+                    <td class="borderLeft">
+                        <span id="TcvL1" >0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="borderRight">
+                        <button id="TminusL2" class="Jbutton">-1</button>
+                    </td>
+                    <td class="borderLeft">
+                        <button id="TminusL1" class="Jbutton">-1</button>
                     </td>
             </table>
 
@@ -289,7 +274,7 @@
                         <strong>Net</strong>
                     </td>
                     <td class="borderLeft borderTop">
-                        <strong>Scrub</strong>
+                        <strong>Processor</strong>
                     </td>
                     
                 </tr>
@@ -298,7 +283,7 @@
                         <button id="TplusN" class="Jbutton">+1</button>
                     </td>
                     <td class="borderLeft">
-                        <button id="TplusS" class="Jbutton">+1</button>
+                        <button id="TplusP" class="Jbutton">+1</button>
                     </td>
                     
                 </tr>
@@ -307,7 +292,7 @@
                         <span id="TcvN" >0</span>
                     </td>
                     <td class="borderLeft">
-                        <span id="TcvS" >0</span>
+                        <span id="TcvP" >0</span>
                     </td>
                     
                 </tr>
@@ -316,34 +301,37 @@
                         <button id="TminusN" class="Jbutton">-1</button>
                     </td>
                     <td class="borderLeft borderBottom">
-                        <button id="TminusS" class="Jbutton">-1</button>
+                        <button id="TminusP" class="Jbutton">-1</button>
                     </td>    
                 </tr>
                 <tr>
                     <td colspan="2" class="borderTop">
-                        <strong>Processor</strong>
+                        <strong>Scrub</strong>
                     </td>
 
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button id="TplusP" class="Jbutton">+1</button>
+                        <button id="TplusS" class="Jbutton">+1</button>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <span id="TcvP" >0</span>
+                        <span id="TcvS" >0</span>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button id="TminusP" class="Jbutton">-1</button>
+                        <button id="TminusS" class="Jbutton">-1</button>
                     </td>
             </table>
-
-            <h2>End Game</h2>
-
-            <table class="tableNormal leftAlign" >
+            </div>
+            
+            
+            <div class="endgame">
+                <h2>End Game</h2 class="onField">
+            <img src="/images/IMG_6898.png" alt="End Game" class="onField">
+            <table class="tableNormal leftAlign onField" >
                 <tr>
                     <th>
                         <span class="header">Final Robot Status</span>
@@ -380,7 +368,7 @@
                     </td>
                 </tr>
             </table>
-            <table class="tableNormal leftAlign">
+            <table class="tableNormal leftAlign onField">
                 <tr>
                     <th colspan="2">
                         <span class="header">Coral Pickup</span>
@@ -403,7 +391,7 @@
                     </td>
                 </tr>
             </table>
-            <table class="tableNormal leftAlign">
+            <table class="tableNormal leftAlign onField">
                 <tr>
                     <th colspan="2">
                         <span class="header">Algae Pickup</span>
@@ -414,7 +402,7 @@
                         <input type="radio" name="algaePickup" id="algaePickupFloor"> <label for="algaePickupFloor">Floor</label>
                     </td>
                     <td>
-                        <input type="radio" name="algaePickup" id="algaePickupStation"> <label for="algaePickupStation">Station</label>
+                        <input type="radio" name="algaePickup" id="algaePickupStation"> <label for="algaePickupStation">Reef</label>
                     </td>
                 </tr>
                 <tr>
@@ -426,41 +414,11 @@
                     </td>
                 </tr>
             </table>
-            <table class="tableNormal">
-                <tr>
-                    <th colspan="2">
-                        <span class="header">Attained Coopertition <!--tf is coopertition--> Point</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="coopertition" id="coopY"> <label for="coopY">Yes</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="coopertition" id="coopN"> <label for="coopN">No</label>
-                    </td>
-                </tr>
-            </table>
-            <table class="tableNormal leftAlign">
+            <table class="tableNormal leftAlign onField">
                 <tr>
                     <th>
                         <span class="header">Driver Skill</span>
                     </th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="skill" id="skillAver"> <label for="skillAver">Average</label>
-                    </td>
-                </tr>
-                    <tr>
-                    <td>
-                        <input type="radio" name="skill" id="skillEffect"> <label for="skillEffect">Effective</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="skill" id="skillNoSure"> <label for="skillNoSure">Not Sure</label>
-                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -469,11 +427,26 @@
                 </tr>
                 <tr>
                     <td>
+                        <input type="radio" name="skill" id="skillEffect"> <label for="skillEffect">Effective</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="skill" id="skillAver"> <label for="skillAver">Average</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <input type="radio" name="skill" id="skillNoEffect"> <label for="skillNoEffect">Not Effective</label>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="skill" id="skillNoSure"> <label for="skillNoSure">Not Sure</label>
+                    </td>
+                </tr>
             </table>
-            <table class="tableNormal">
+            <table class="tableNormal onField">
                 <tr>
                     <th colspan="4">
                         <span class="header">Played Defense</span>
@@ -487,22 +460,56 @@
                         <input type="radio" name="defense" id="defenseN"> <label for="defenseN">No</label>
                     </td>
                 </tr>
-                <tr id="defenseEffectRow" style="display: none;">
-                    <td style="text-wrap: wrap; width: 50%;" colspan="2">
-                        How effective was it? (1-5 scale)
+            </table>
+            <table id="defenseTable" class="tableNormal leftAlign onField" style="display: none;">
+                <tr>
+                    <th>
+                        <span class="header">Defensive Skills</span>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="dSkill" id="Blocked coral station"> <label for="Blocked coral station">Blocked access to coral station</label>
                     </td>
-                    <td colspan="2">
-                        <select id="defenseEffect" style="margin: 0;">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="dSkill" id="Slowed good team"> <label for="Slowed good team">Slowed high scoring team</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-wrap: wrap;">
+                        <input type="checkbox" name="dSkill" id="Ineffective"> <label for="Ineffective">Not effective at blocking station or slowing team down</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="dSkill" id="Broke down"> <label for="Broke down">Broke down</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="dSkill" id="Avoided penalties"> <label for="Avoided penalties">Avoided penalties</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="dSkill" id="Took penalties"> <label for="Took penalties">Lots of penalties</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="dSkill" id="Stuck: Algae"> <label for="Stuck: Algae">Stuck on algae</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="dSkill" id="Stuck: Coral"> <label for="Stuck: Coral">Stuck on coral</label>
                     </td>
                 </tr>
             </table>
-            <table class="tableNormal">
+            <table class="tableNormal onField">
                 <tr>
                     <th colspan="3">
                         <span class="header">Speed</span>
@@ -520,7 +527,7 @@
                     </td>
                 </tr>
             </table>
-            <table class="tableNormal leftAlign">
+            <table class="tableNormal leftAlign onField">
                 <tr>
                     <th>
                         <span class="header">Robot Assessment</span>
@@ -570,11 +577,39 @@
             </table>
             <table class="tableNormal">
                 <tr>
+                    <th>
+                        <span class="header">Notes</span>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea id="notes"></textarea>
+                    </td>             
+                </tr>
+            </table>
+            <table class="tableNormal onField">
+                <tr>
+                    <th colspan="2">
+                        <span class="header">Attained Coopertition <!--tf is coopertition--> Point</span>
+                    </th><!--coopertition is when both teams score 2 algae in their processors, allowing for easier access to the cora ranking point due to the fact that it allows the ranking point to be aquired from 3 coral layers as opposed to 4-->
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="coopertition" id="coopY"> <label for="coopY">Yes</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="coopertition" id="coopN"> <label for="coopN">No</label>
+                    </td>
+                </tr>
+            </table>
+            <table class="tableNormal onField">
+                <tr>
                     <td>
                         <span class="header">Ranking Points:</span>
                     </td>
                     <td>
                         <select id="rankPoints">
+                            <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -586,20 +621,10 @@
                 </tr>
             </table>
                 
-            <table class="tableNormal">
-                <tr>
-                    <th>
-                        <span class="header">Notes</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <textarea id="notes"></textarea>
-                    </td>             
-                </tr>
-            </table>
             <div class="centerWrap">
+                <div id="pleaseWaitMessage" style="display: none; color: blue; text-align: center;">Please wait...</div>
                 <button id="submit" class="Jbutton">Submit</button>
+            </div>
             </div>
     </div>
 </body>
@@ -608,12 +633,176 @@
         const urlParams = new URLSearchParams(window.location.search);
         const teamNumber = urlParams.get('team');
         const matchNum = urlParams.get('match');
-        const name = urlParams.get('name');
+        const scoutName = urlParams.get('name');
+        const scoutingSeat = urlParams.get('seat'); // Retrieve the scouting seat from the URL
+
+        // Populate the fields with the retrieved values
         if (teamNumber) {
-            document.getElementById('team').value = teamNumber;
+            document.getElementById('team').textContent = `Team: ${teamNumber}`;
         }
         if (matchNum) {
-            document.getElementById('matchNumInput').value = matchNum;
+            document.getElementById('matchNumInput').textContent = `Match #: ${matchNum}`;
+        }
+        if (scoutingSeat) {
+            console.log(`Scouting Seat: ${scoutingSeat}`); // Log the scouting seat to verify
+        }
+
+        // Check if the name is "jett" (case-insensitive)
+        if (scoutName && scoutName.toLowerCase() === 'jett') {
+            // Change the text color of all elements to #0066cc
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#0066cc';
+            });
+
+            // Add "Super Cool Developer Mode" to the top bar in the center
+            const topBar = document.getElementById('top-bar');
+            const developerMode = document.createElement('span');
+            developerMode.textContent = 'Best Developer Mode';
+            developerMode.style.position = 'absolute';
+            developerMode.style.left = '50%';
+            developerMode.style.transform = 'translateX(-50%)';
+            developerMode.style.color = '#0066cc';
+            developerMode.style.fontWeight = 'bold';
+            developerMode.style.fontSize = '1rem'; // Adjust font size for smaller screens
+            developerMode.style.whiteSpace = 'nowrap'; // Prevent text wrapping
+            developerMode.style.textAlign = 'center';
+            topBar.appendChild(developerMode);
+        }
+        if (scoutName && scoutName.toLowerCase() === 'natalie hummel') {
+            document.querySelectorAll('*').forEach((element) => {   
+                element.style.color = '#0066cc';
+            });
+            const topBar = document.getElementById('top-bar');
+            const natalieCustom = document.createElement('span');
+            natalieCustom.textContent = 'Coolest Mentor Mode';
+            natalieCustom.style.position = 'absolute';
+            natalieCustom.style.left = '50%';
+            natalieCustom.style.transform = 'translateX(-50%)';
+            natalieCustom.style.color = '#0066cc';
+            natalieCustom.style.fontWeight = 'bold';
+            natalieCustom.style.fontSize = '1rem';
+            natalieCustom.style.whiteSpace = 'nowrap';
+            natalieCustom.style.textAlign = 'center';
+            topBar.appendChild(natalieCustom);
+        }
+        if (scoutName && scoutName.toLowerCase() === 'max') {
+            document.querySelectorAll('*').forEach((element) => {   
+                element.style.color = '#df60eb';
+            });
+            const topBar = document.getElementById('top-bar');
+            const maxCustom = document.createElement('span');
+            maxCustom.textContent = '"whatever"';
+            maxCustom.style.position = 'absolute';
+            maxCustom.style.left = '50%';
+            maxCustom.style.transform = 'translateX(-50%)';
+            maxCustom.style.color = '#df60eb';
+            maxCustom.style.fontWeight = 'bold';
+            maxCustom.style.fontSize = '1rem';
+            maxCustom.style.whiteSpace = 'nowrap';
+            maxCustom.style.textAlign = 'center';
+            topBar.appendChild(maxCustom);
+        }
+        if (scoutName && scoutName.toLowerCase() === 'cole') {
+            document.querySelectorAll('*').forEach((element) => {   
+                element.style.color = '#ed5c5c';
+            });
+            const topBar = document.getElementById('top-bar');
+            const coleCustom = document.createElement('span');
+            coleCustom.textContent = '#1 Scouter';
+            coleCustom.style.position = 'absolute';
+            coleCustom.style.left = '50%';
+            coleCustom.style.transform = 'translateX(-50%)';
+            coleCustom.style.color = '#ed5c5c';
+            coleCustom.style.fontWeight = 'bold';
+            coleCustom.style.fontSize = '1rem';
+            coleCustom.style.whiteSpace = 'nowrap';
+            coleCustom.style.textAlign = 'center';
+            topBar.appendChild(coleCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'IMG_2527.webp';
+                endGameImage.alt = 'End Game - Cole';
+            }
+        }
+        if (scoutName && scoutName.toLowerCase() === 'audrey'){
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#ff0090';
+            });
+            const topBar = document.getElementById('top-bar');
+            const audreyCustom = document.createElement('span');
+            audreyCustom.textContent = 'HOT pink';
+            audreyCustom.style.position = 'absolute';
+            audreyCustom.style.left = '50%';
+            audreyCustom.style.transform = 'translateX(-50%)';
+            audreyCustom.style.color = '#ff0090';
+            audreyCustom.style.fontWeight = 'bold';
+            audreyCustom.style.fontSize = '1rem';
+            audreyCustom.style.whiteSpace = 'nowrap';
+            audreyCustom.style.textAlign = 'center';
+            topBar.appendChild(audreyCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'IMG_9484.webp';
+                endGameImage.alt = 'End Game - Audrey';
+            }
+        }
+        if (scoutName && scoutName.toLowerCase() === 'eyal'){
+            const topBar = document.getElementById('top-bar');
+            const eyalCustom = document.createElement('span');
+            eyalCustom.textContent = 'EYAL';
+            eyalCustom.style.position = 'absolute';
+            eyalCustom.style.left = '50%';
+            eyalCustom.style.transform = 'translateX(-50%)';
+            eyalCustom.style.fontWeight = 'bold';
+            eyalCustom.style.fontSize = '1rem';
+            eyalCustom.style.whiteSpace = 'nowrap';
+            eyalCustom.style.textAlign = 'center';
+            topBar.appendChild (eyalCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'IMG_1230.webp';
+                endGameImage.alt = 'End Game - Eyal';
+            }
+        }
+        if (scoutName && scoutName.toLowerCase() === 'ashley'){
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#df60eb';
+            });
+            const topBar = document.getElementById('top-bar');
+            const ashCustom = document.createElement('span');
+            ashCustom.textContent = 'Teto Reference';
+            ashCustom.style.position = 'absolute';
+            ashCustom.style.color = '#df60eb';
+            ashCustom.style.left = '50%';
+            ashCustom.style.transform = 'translateX(-50%)';
+            ashCustom.style.fontWeight = 'bold';
+            ashCustom.style.fontSize = '1rem';
+            ashCustom.style.whiteSpace = 'nowrap';
+            ashCustom.style.textAlign = 'center';
+            topBar.appendChild (ashCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'image.webp';
+                endGameImage.alt = 'End Game - Ash';
+            }
+        }
+        if (scoutName && scoutName.toLowerCase() === 'izzy'){
+            const topBar = document.getElementById('top-bar');
+            const ashCustom = document.createElement('span');
+            ashCustom.textContent = 'Gatorade';
+            ashCustom.style.position = 'absolute';
+            ashCustom.style.left = '50%';
+            ashCustom.style.transform = 'translateX(-50%)';
+            ashCustom.style.fontWeight = 'bold';
+            ashCustom.style.fontSize = '1rem';
+            ashCustom.style.whiteSpace = 'nowrap';
+            ashCustom.style.textAlign = 'center';
+            topBar.appendChild (ashCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'image (1).webp';
+                endGameImage.alt = 'End Game - izzy';
+            }
         }
     });
 </script>
