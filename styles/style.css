@@ -32,7 +32,7 @@ hr {
 }
 
 .tableNormal {
-  margin: 24px auto;
+  margin: 2em auto;
   background-color: rgb(20, 20, 20);
   box-shadow: -8px 0px 8px rgba(20, 20, 20, 0.2), 8px 0px 24px rgba(20, 20, 20, 0.2), 0px 8px 8px rgba(20, 20, 20, 0.2), 0px -8px 24px rgba(20, 20, 20, 0.2);
   width: 50%;
@@ -60,8 +60,11 @@ hr {
 }
 .tableNormal td {
   padding: 4px 6px;
-  min-width: 50px !important;
+  min-width: 50px;
   white-space: nowrap;
+}
+.tableNormal td strong {
+  font-size: 1.4em;
 }
 .tableNormal .noShow:hover {
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
@@ -73,11 +76,11 @@ hr {
   width: 77.7777777777%;
   box-shadow: -8px 0px 8px rgba(24, 24, 24, 0.2), 8px 0px 24px rgba(24, 24, 24, 0.2);
 }
-#container .containerInner {
+#container #containerInner {
   padding: 8px 16px;
   background-color: rgb(24, 24, 24);
 }
-#container .containerInner h2 {
+#container #containerInner h2 {
   text-align: center;
   text-shadow: 2px 2px 8px rgba(61, 61, 61, 0.5), -2px 2px 8px rgba(61, 61, 61, 0.5), 2px -2px 8px rgba(61, 61, 61, 0.5), -2px -2px 8px rgba(61, 61, 61, 0.5);
   font-size: 2em;
@@ -112,11 +115,29 @@ input[type=radio], input[type=checkbox] {
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
   cursor: pointer;
 }
+.teleop input[type=radio], .teleop input[type=checkbox] {
+  outline: 0.2em solid rgba(174, 198, 207, 0.1882352941);
+}
+.endgame input[type=radio], .endgame input[type=checkbox] {
+  outline: 0.2em solid rgba(255, 105, 97, 0.1882352941);
+}
 input[type=radio]:hover, input[type=radio]:checked, input[type=checkbox]:hover, input[type=checkbox]:checked {
   outline: 0.2em solid #14c600;
 }
 input[type=radio]:checked, input[type=checkbox]:checked {
   background: #14c600;
+}
+.teleop input[type=radio]:hover, .teleop input[type=radio]:checked, .teleop input[type=checkbox]:hover, .teleop input[type=checkbox]:checked {
+  outline: 0.2em solid #AEC6CF;
+}
+.teleop input[type=radio]:checked, .teleop input[type=checkbox]:checked {
+  background: #AEC6CF;
+}
+.endgame input[type=radio]:hover, .endgame input[type=radio]:checked, .endgame input[type=checkbox]:hover, .endgame input[type=checkbox]:checked {
+  outline: 0.2em solid #FF6961;
+}
+.endgame input[type=radio]:checked, .endgame input[type=checkbox]:checked {
+  background: #FF6961;
 }
 
 input[type=checkbox] {
@@ -141,6 +162,14 @@ input[type=number], input[type=text] {
 input[type=number]:hover, input[type=text]:hover {
   border-color: #14c600;
   color: #14c600;
+}
+.teleop input[type=number]:hover, .teleop input[type=text]:hover {
+  border-color: #AEC6CF;
+  color: #AEC6CF;
+}
+.endgame input[type=number]:hover, .endgame input[type=text]:hover {
+  border-color: #FF6961;
+  color: #FF6961;
 }
 input[type=number]:focus, input[type=text]:focus {
   outline: none;
@@ -167,6 +196,14 @@ textarea {
 textarea:hover {
   border-color: #14c600;
   color: #14c600;
+}
+.teleop textarea:hover {
+  border-color: #AEC6CF;
+  color: #AEC6CF;
+}
+.endgame textarea:hover {
+  border-color: #FF6961;
+  color: #FF6961;
 }
 textarea::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0);
@@ -198,17 +235,25 @@ span[id^=cv], span[id^=Tcv] {
   color: white;
   padding: 0.5em;
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
-  font-size: 1em;
+  font-size: 1.3em;
   cursor: pointer;
   margin: 0.3em 0.7em;
-  min-width: 4em;
-  min-height: 2.4em;
+  min-width: 3em;
+  min-height: 3em;
   border-radius: 0.5em;
   display: inline-block !important;
 }
 .Jbutton:hover, .modal .modalContent button:hover {
   border-color: #14c600;
   color: #14c600;
+}
+.teleop .Jbutton:hover, .teleop .modal .modalContent button:hover, .modal .modalContent .teleop button:hover {
+  border-color: #AEC6CF;
+  color: #AEC6CF;
+}
+.endgame .Jbutton:hover, .endgame .modal .modalContent button:hover, .modal .modalContent .endgame button:hover {
+  border-color: #FF6961;
+  color: #FF6961;
 }
 
 img {
@@ -238,6 +283,14 @@ select {
 select:hover {
   border-color: #14c600;
   color: #14c600;
+}
+.teleop select:hover {
+  border-color: #AEC6CF;
+  color: #AEC6CF;
+}
+.endgame select:hover {
+  border-color: #FF6961;
+  color: #FF6961;
 }
 select:focus {
   outline: none;

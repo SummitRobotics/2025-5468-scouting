@@ -299,12 +299,14 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".onField").forEach((element) => {
             element.style.display = "table";
         });
+        document.getElementById("teleTitle").style.display = "block";
     });
 
     document.getElementById('fieldN').addEventListener("click", () => {
         document.querySelectorAll(".onField").forEach((element) => {
             element.style.display = "none";
         });
+        document.getElementById("teleTitle").style.display = "none";
     });
     
     document.getElementById('leaveY').addEventListener("click", () => {
