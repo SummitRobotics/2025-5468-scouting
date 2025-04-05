@@ -769,6 +769,7 @@
             document.getElementById('containerInner').style.backgroundAttachment = 'fixed';
             document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
             // Adjust background image for mobile devices
+            document.getElementById('containerInner').style.backgroundSize = 'contain';
             const adjustBackgroundForMobile = () => {
                 if (window.innerWidth <= 768) { // Mobile screen width threshold
                     document.getElementById('containerInner').style.backgroundSize = 'auto';
