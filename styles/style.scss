@@ -21,6 +21,10 @@ $filterMain: brightness(115%) saturate(110%) hue-rotate(-15deg);
 //colors
 $chaosGreen: #14c600;
 $chaosGreenDark: #14c60030;
+$colorBlue: #AEC6CF;
+$colorBlueDark: #AEC6CF30;
+$colorRed: #FF6961;
+$colorRedDark: #FF696130;
 
 @mixin header {
         text-align: center;
@@ -36,6 +40,14 @@ $chaosGreenDark: #14c60030;
         &:hover {
                 border-color: $chaosGreen;
                 color:$chaosGreen;
+        }
+        .teleop &:hover {
+                border-color: $colorBlue;
+                color: $colorBlue;
+        }
+        .endgame &:hover {
+                border-color: $colorRed;
+                color: $colorRed; 
         }
 }
 
@@ -61,8 +73,8 @@ hr {
         font-size: 3em;
 }
 
-.tableNormal { //original design from another project by 5stygian, the code has been modified for this project
-        margin: 24px auto;
+.tableNormal { //original design from another project by 5stygian, the code has been modified for this project.
+        margin: 2em auto;
         background-color: rgb(20,20,20);
         box-shadow: -8px 0px 8px rgba(20,20,20,0.2), 8px 0px 24px rgba(20,20,20,0.2), 0px 8px 8px rgba(20,20,20,0.2), 0px -8px 24px rgba(20,20,20,0.2);
         width: 50%;
@@ -94,9 +106,13 @@ hr {
 
         td {
                 padding: 4px 6px;
-                min-width: 50px !important;
+                min-width: 50px;
                 white-space: nowrap; // Prevent line breaks within the cell
 
+        }
+
+        td strong {
+                font-size: 1.4em;
         }
 
         .noShow:hover {
@@ -110,7 +126,7 @@ hr {
         width: 77.7777777777%; // lucky number 7!
         box-shadow: -8px 0px 8px rgba(24,24,24,0.2), 8px 0px 24px rgba(24,24,24,0.2);
 
-        .containerInner {
+        #containerInner {
                 padding: 8px 16px;
                 background-color: rgb(24,24,24);
 
@@ -149,12 +165,35 @@ input[type=radio], input[type=checkbox] {
         transition: $animationTransition1;
         cursor: pointer;
 
+        .teleop & {
+                outline: 0.2em solid $colorBlueDark;
+        }
+        .endgame & {
+                outline: 0.2em solid $colorRedDark;
+        }
+
         &:hover, 
         &:checked {
                 outline: 0.2em solid $chaosGreen;
         }
         &:checked {
                 background: $chaosGreen;    
+        }
+
+        .teleop &:hover, 
+        .teleop &:checked {
+                outline: 0.2em solid $colorBlue;
+        }
+        .teleop &:checked {
+                background: $colorBlue;    
+        }
+
+        .endgame &:hover, 
+        .endgame &:checked {
+                outline: 0.2em solid $colorRed;
+        }
+        .endgame &:checked {
+                background: $colorRed;    
         }
 
 }
@@ -218,14 +257,16 @@ span[id^=cv], span[id^=Tcv] { //ripoff RegEx
 
 .Jbutton {
         @include elementDefault;
-        font-size: 1em;
+        font-size: 1.3em;
         cursor: pointer;
         margin: 0.3em 0.7em;
-        min-width: 4em;
-        min-height: 2.4em;
+        min-width: 3em;
+        min-height: 3em;
         border-radius: 0.5em;
         display: inline-block !important; // Ensure buttons are inline-block
 }
+
+
 
 img {
         width: 50%;
@@ -422,51 +463,52 @@ img {
 }
       
 .teleop *:is(table,img) {
-        border-color: #AEC6CF !important;
+        border-color: $colorBlue !important;
 }
 .teleop .borderLeft {
-        border-left: 0.5em solid #AEC6CF !important;
+        border-left: 0.5em solid $colorBlue !important;
 }
       
 .teleop .borderRight {
-        border-right: 0.5em solid #AEC6CF !important;
+        border-right: 0.5em solid $colorBlue !important;
 }
       
 .teleop .borderBottom {
-        border-bottom: 0.5em solid #AEC6CF !important;
+        border-bottom: 0.5em solid $colorBlue !important;
 }
       
 .teleop .borderTop {
-        border-top: 0.5em solid #AEC6CF !important;
+        border-top: 0.5em solid $colorBlue !important;
 }
       
 .teleop h2 {
-        border-bottom: 2px solid #AEC6CF !important;
-        border-top: 2px solid #AEC6CF !important;
+        border-bottom: 2px solid $colorBlue !important;
+        border-top: 2px solid $colorBlue !important;
+
         background-color: rgba(0, 20, 198, 0.1882352941) !important;
 }
       
 .endgame *:is(table,img) {
-        border-color: #FF6961 !important;
+        border-color: $colorRed !important;
 }
 .endgame .borderLeft {
-        border-left: 0.5em solid #FF6961 !important;
+        border-left: 0.5em solid $colorRed !important;
 }
       
 .endgame .borderRight {
-        border-right: 0.5em solid #FF6961 !important;
+        border-right: 0.5em solid $colorRed !important;
 }
       
 .endgame .borderBottom {
-        border-bottom: 0.5em solid #FF6961 !important;
+        border-bottom: 0.5em solid $colorRed !important;
 }
       
 .endgame .borderTop {
-        border-top: 0.5em solid #FF6961 !important;
+        border-top: 0.5em solid $colorRed !important;
 }
       
 .endgame h2 {
-        border-bottom: 2px solid #FF6961 !important;
-        border-top: 2px solid #FF6961 !important;
+        border-bottom: 2px solid $colorRed !important;
+        border-top: 2px solid $colorRed !important;
         background-color: rgba(198, 0, 20, 0.1882352941) !important;
 }
