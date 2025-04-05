@@ -768,6 +768,18 @@
             document.getElementById('containerInner').style.backgroundPosition = 'center';
             document.getElementById('containerInner').style.backgroundAttachment = 'fixed';
             document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
+            // Adjust background image for mobile devices
+            const adjustBackgroundForMobile = () => {
+                if (window.innerWidth <= 768) { // Mobile screen width threshold
+                    document.getElementById('containerInner').style.backgroundSize = 'auto';
+                } else {
+                    document.getElementById('containerInner').style.backgroundSize = '50% 50%';
+                }
+            };
+
+            // Call the function on load and on resize
+            adjustBackgroundForMobile();
+            window.addEventListener('resize', adjustBackgroundForMobile);
             const endGameImage = document.querySelector('.endgame img');
             if (endGameImage) {
                 endGameImage.src = 'IMG_1230.webp';
