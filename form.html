@@ -851,8 +851,10 @@
         } else if (theme && theme.toLowerCase() === 'eyal') {
             document.getElementById('container').style.backgroundImage = 'url("IMG_1230.webp")';
             document.getElementById('containerInner').style.backgroundImage = 'url("IMG_1230.webp")';
-            document.getElementById('containerInner').style.backgroundSize = 'contain';
-            document.getElementById('containerInner').style.backgroundRepeat = 'repeat-y';
+            document.getElementById('containerInner').style.backgroundSize = '50% 50%';
+            document.getElementById('containerInner').style.backgroundPosition = 'center';
+            document.getElementById('containerInner').style.backgroundAttachment = 'fixed';
+            document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
         }
     });
 </script>
