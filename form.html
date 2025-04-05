@@ -769,7 +769,7 @@
             document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
             // Hide input backgrounds
             document.querySelectorAll('input').forEach((input) => {
-                input.style.backgroundColor = 'transparent';
+                input.style.backgroundColor = 'transparent'
             });
             const adjustBackgroundForMobile = () => {
                 if (window.innerWidth <= 768) { // Mobile screen width threshold
@@ -875,9 +875,10 @@
             });
         }
 
-        // Hide input backgrounds
+        // Hide input backgrounds and borders
         document.querySelectorAll('input').forEach((input) => {
-            input.style.backgroundColor = 'transparent';
+            input.style.background = 'none';
+            input.style.border = 'none';
         });
     });
 </script>
