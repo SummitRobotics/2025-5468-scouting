@@ -633,6 +633,7 @@
         const matchNum = urlParams.get('match');
         const scoutName = urlParams.get('name');
         const scoutingSeat = urlParams.get('seat'); // Retrieve the scouting seat from the URL
+        const theme = urlParams.get('theme'); // Retrieve the theme from the URL
 
         // Populate the fields with the retrieved values
         if (teamNumber) {
@@ -644,8 +645,11 @@
         if (scoutingSeat) {
             console.log(`Scouting Seat: ${scoutingSeat}`); // Log the scouting seat to verify
         }
-
+        if (theme) {
+            console.log(`Theme: ${theme}`); // Log the theme to verify
+        }
         // these comments sure sound like copilot /lh
+        // thats because they are
         // Check if the name is "jett" (case-insensitive)
         if (scoutName && scoutName.toLowerCase() === 'jett') {
             // Change the text color of all elements to #0066cc
@@ -758,6 +762,12 @@
             eyalCustom.style.whiteSpace = 'nowrap';
             eyalCustom.style.textAlign = 'center';
             topBar.appendChild (eyalCustom);
+            document.getElementById('container').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundSize = '50% 50%';
+            document.getElementById('containerInner').style.backgroundPosition = 'center';
+            document.getElementById('containerInner').style.backgroundAttachment = 'fixed';
+            document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
             const endGameImage = document.querySelector('.endgame img');
             if (endGameImage) {
                 endGameImage.src = 'IMG_1230.webp';
@@ -821,6 +831,28 @@
                 endGameImage.src = 'IMG_1176.webp';
                 endGameImage.alt = 'End Game - evelyn';
             }
+        }
+        if (theme && theme.toLowerCase() === 'blue') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#0066cc';
+            });
+        } else if (theme && theme.toLowerCase() === 'red') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#ed5c5c';
+            });
+        } else if (theme && theme.toLowerCase() === 'pink') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#ff0090';
+            });
+        } else if (theme && theme.toLowerCase() === 'white') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#ffffff';
+            });
+        } else if (theme && theme.toLowerCase() === 'eyal') {
+            document.getElementById('container').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundSize = 'contain';
+            document.getElementById('containerInner').style.backgroundRepeat = 'repeat-y';
         }
     });
 </script>
