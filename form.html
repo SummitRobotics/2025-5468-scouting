@@ -764,12 +764,13 @@
             topBar.appendChild (eyalCustom);
             document.getElementById('container').style.backgroundImage = 'url("IMG_1230.webp")';
             document.getElementById('containerInner').style.backgroundImage = 'url("IMG_1230.webp")';
-            document.getElementById('containerInner').style.backgroundSize = '50% 50%';
+            document.getElementById('containerInner').style.backgroundSize = 'auto';
             document.getElementById('containerInner').style.backgroundPosition = 'center';
-            document.getElementById('containerInner').style.backgroundAttachment = 'fixed';
             document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
-            // Adjust background image for mobile devices
-            document.getElementById('containerInner').style.backgroundSize = 'contain';
+            // Hide input backgrounds
+            document.querySelectorAll('input').forEach((input) => {
+                input.style.backgroundColor = 'transparent';
+            });
             const adjustBackgroundForMobile = () => {
                 if (window.innerWidth <= 768) { // Mobile screen width threshold
                     document.getElementById('containerInner').style.backgroundSize = 'auto';
@@ -862,12 +863,16 @@
                 element.style.color = '#ffffff';
             });
         } else if (theme && theme.toLowerCase() === 'eyal') {
-            document.getElementById('container').style.backgroundImage = 'url("IMG_1230.webp")';
-            document.getElementById('containerInner').style.backgroundImage = 'url("IMG_1230.webp")';
-            document.getElementById('containerInner').style.backgroundSize = '50% 50%';
-            document.getElementById('containerInner').style.backgroundPosition = 'center';
-            document.getElementById('containerInner').style.backgroundAttachment = 'fixed';
-            document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
+            const containerInner = document.getElementById('containerInner');
+            containerInner.style.backgroundImage = 'url("IMG_1230.webp")';
+            containerInner.style.backgroundSize = 'auto';
+            containerInner.style.backgroundPosition = 'center';
+            containerInner.style.backgroundRepeat = 'repeat';
+
+            // Hide input backgrounds
+            document.querySelectorAll('input').forEach((input) => {
+                input.style.backgroundColor = 'transparent';
+            });
         }
     });
 </script>
