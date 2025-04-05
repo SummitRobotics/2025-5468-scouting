@@ -538,4 +538,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return messages[0].text; // Fallback to the first message
     }
+
+    // Hide input backgrounds
+    document.querySelectorAll('input').forEach((input) => {
+        input.style.backgroundColor = 'transparent';
+    });
 });
