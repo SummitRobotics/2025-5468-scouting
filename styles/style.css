@@ -107,7 +107,7 @@ input[type=radio], input[type=checkbox] {
      -moz-appearance: none;
           appearance: none;
   border-radius: 50%;
-  background: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
   border: 0.3em solid rgb(28, 28, 28);
   outline: 0.2em solid rgba(20, 198, 0, 0.1882352941);
   width: 1.5em;
@@ -121,23 +121,26 @@ input[type=radio], input[type=checkbox] {
 .endgame input[type=radio], .endgame input[type=checkbox] {
   outline: 0.2em solid rgba(255, 105, 97, 0.1882352941);
 }
-input[type=radio]:hover, input[type=radio]:checked, input[type=checkbox]:hover, input[type=checkbox]:checked {
+.auto input[type=radio]:hover, .auto input[type=radio]:checked, .auto input[type=checkbox]:hover, .auto input[type=checkbox]:checked {
   outline: 0.2em solid #14c600;
 }
-input[type=radio]:checked, input[type=checkbox]:checked {
-  background: #14c600;
+.auto input[type=radio]:checked, .auto input[type=checkbox]:checked {
+  background: #14c600 !important;
+  border: 0.3em solid rgb(28, 28, 28) !important;
 }
 .teleop input[type=radio]:hover, .teleop input[type=radio]:checked, .teleop input[type=checkbox]:hover, .teleop input[type=checkbox]:checked {
   outline: 0.2em solid #AEC6CF;
 }
 .teleop input[type=radio]:checked, .teleop input[type=checkbox]:checked {
-  background: #AEC6CF;
+  background-color: #AEC6CF !important;
+  border: 0.3em solid rgb(28, 28, 28) !important;
 }
 .endgame input[type=radio]:hover, .endgame input[type=radio]:checked, .endgame input[type=checkbox]:hover, .endgame input[type=checkbox]:checked {
   outline: 0.2em solid #FF6961;
 }
 .endgame input[type=radio]:checked, .endgame input[type=checkbox]:checked {
-  background: #FF6961;
+  background-color: #FF6961 !important;
+  border: 0.3em solid rgb(28, 28, 28) !important;
 }
 
 input[type=checkbox] {
