@@ -829,9 +829,7 @@
             }
         }
         if (scoutName && scoutName.toLowerCase() === 'finn'){
-            document.querySelectorAll('*').forEach((element) => {
-                element.style.color = '#F1E411';
-            });
+            
             const topBar = document.getElementById('top-bar');
             const finnCustom = document.createElement('span');
             finnCustom.textContent = 'PINEAPPLE';
@@ -846,7 +844,7 @@
             topBar.appendChild (finnCustom);
             const endGameImage = document.querySelector('.endgame img');
             if (endGameImage) {
-                endGameImage.src = 'images/IMG_4448.png';
+                endGameImage.src = '/images/IMG_4448.jpeg';
                 endGameImage.alt = 'End Game - finn';
             }
         }
