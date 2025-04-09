@@ -828,6 +828,28 @@
                 endGameImage.alt = 'End Game - izzy';
             }
         }
+        if (scoutName && scoutName.toLowerCase() === 'finn'){
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#F1E411';
+            });
+            const topBar = document.getElementById('top-bar');
+            const finnCustom = document.createElement('span');
+            finnCustom.textContent = 'PINEAPPLE';
+            finnCustom.style.position = 'absolute';
+            finnCustom.style.left = '50%';
+            finnCustom.style.transform = 'translateX(-50%)';
+            finnCustom.style.fontWeight = 'bold';
+            finnCustom.style.fontSize = '1rem';
+            finnCustom.style.whiteSpace = 'nowrap';
+            finnCustom.style.textAlign = 'center';
+            
+            topBar.appendChild (finnCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = 'images/IMG_4448.png';
+                endGameImage.alt = 'End Game - finn';
+            }
+        }
         if (scoutName && scoutName.toLowerCase() === 'evelyn'){
             const topBar = document.getElementById('top-bar');
             const evelynCustom = document.createElement('span');
