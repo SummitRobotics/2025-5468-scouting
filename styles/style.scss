@@ -21,10 +21,6 @@ $filterMain: brightness(115%) saturate(110%) hue-rotate(-15deg);
 //colors
 $chaosGreen: #14c600;
 $chaosGreenDark: #14c60030;
-$colorBlue: #AEC6CF;
-$colorBlueDark: #AEC6CF30;
-$colorRed: #FF6961;
-$colorRedDark: #FF696130;
 
 @mixin header {
         text-align: center;
@@ -40,14 +36,6 @@ $colorRedDark: #FF696130;
         &:hover {
                 border-color: $chaosGreen;
                 color:$chaosGreen;
-        }
-        .teleop &:hover {
-                border-color: $colorBlue;
-                color: $colorBlue;
-        }
-        .endgame &:hover {
-                border-color: $colorRed;
-                color: $colorRed; 
         }
 }
 
@@ -73,8 +61,8 @@ hr {
         font-size: 3em;
 }
 
-.tableNormal { //original design from another project by 5stygian, the code has been modified for this project.
-        margin: 2em auto;
+.tableNormal { //original design from another project by 5stygian, the code has been modified for this project
+        margin: 24px auto;
         background-color: rgb(20,20,20);
         box-shadow: -8px 0px 8px rgba(20,20,20,0.2), 8px 0px 24px rgba(20,20,20,0.2), 0px 8px 8px rgba(20,20,20,0.2), 0px -8px 24px rgba(20,20,20,0.2);
         width: 50%;
@@ -106,13 +94,9 @@ hr {
 
         td {
                 padding: 4px 6px;
-                min-width: 50px;
+                min-width: 50px !important;
                 white-space: nowrap; // Prevent line breaks within the cell
 
-        }
-
-        td strong {
-                font-size: 1.4em;
         }
 
         .noShow:hover {
@@ -126,7 +110,7 @@ hr {
         width: 77.7777777777%; // lucky number 7!
         box-shadow: -8px 0px 8px rgba(24,24,24,0.2), 8px 0px 24px rgba(24,24,24,0.2);
 
-        #containerInner {
+        .containerInner {
                 padding: 8px 16px;
                 background-color: rgb(24,24,24);
 
@@ -157,7 +141,7 @@ hr {
 input[type=radio], input[type=checkbox] {
         appearance: none;
         border-radius: 50%;
-        background-color: rgb(0,0,0);
+        background: rgb(0,0,0);
         border: 0.3em solid rgb(28,28,28);
         outline: 0.2em solid $chaosGreenDark;
         width: 1.5em;
@@ -165,38 +149,12 @@ input[type=radio], input[type=checkbox] {
         transition: $animationTransition1;
         cursor: pointer;
 
-        .teleop & {
-                outline: 0.2em solid $colorBlueDark;
-        }
-        .endgame & {
-                outline: 0.2em solid $colorRedDark;
-        }
-
-        .auto &:hover, 
-        .auto &:checked {
+        &:hover, 
+        &:checked {
                 outline: 0.2em solid $chaosGreen;
         }
-        .auto &:checked {
-                background: $chaosGreen !important;  
-                border: 0.3em solid rgb(28,28,28) !important;  
-        }
-
-        .teleop &:hover, 
-        .teleop &:checked {
-                outline: 0.2em solid $colorBlue;
-        }
-        .teleop &:checked {
-                background-color: $colorBlue !important;  
-                border: 0.3em solid rgb(28,28,28) !important;    
-        }
-
-        .endgame &:hover, 
-        .endgame &:checked {
-                outline: 0.2em solid $colorRed;
-        }
-        .endgame &:checked {
-                background-color: $colorRed !important;  
-                border: 0.3em solid rgb(28,28,28) !important;    
+        &:checked {
+                background: $chaosGreen;    
         }
 
 }
@@ -255,21 +213,19 @@ textarea {
 }
 
 span[id^=cv], span[id^=Tcv] { //ripoff RegEx
-        font-size: 3em;
+        font-size: 1.6em;
 }
 
 .Jbutton {
         @include elementDefault;
-        font-size: 1.3em;
+        font-size: 1.4em;
         cursor: pointer;
         margin: 0.3em 0.7em;
-        min-width: 3em;
-        min-height: 3em;
+        min-width: 4em;
+        min-height: 2.4em;
         border-radius: 0.5em;
         display: inline-block !important; // Ensure buttons are inline-block
 }
-
-
 
 img {
         width: 50%;
@@ -323,23 +279,22 @@ label { //more RegEx
 }
 
 .borderLeft {
-        border-left: 0.5em solid #14c600;
-        margin-left: 2em;
+        border-left: 0.25em solid $chaosGreen !important;
 }
-      
+
+
 .borderRight {
-        border-right: 0.5em solid #14c600;
-        margin-right: 0.25em;
+        border-right: 0.25em solid $chaosGreen !important;
 }
-      
+
+
 .borderBottom {
-        border-bottom: 0.5em solid #14c600;
-        margin-bottom: 0.25em;
+        border-bottom: 0.25em solid $chaosGreen !important;
 }
-      
+
+
 .borderTop {
-        border-top: 0.5em solid #14c600;
-        margin-top: 0.25em;
+        border-top: 0.25em solid $chaosGreen !important;  
 }
 
 :is(.borderLeft,.borderRight,.borderBottom,.borderTop):hover {
@@ -347,38 +302,6 @@ label { //more RegEx
         transition: $animationTransition1;
 }
 
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-
-    .modalContent {
-        background-color: rgb(24, 24, 24);
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: -8px 0px 8px rgba(24,24,24,0.2), 8px 0px 24px rgba(24,24,24,0.2), 0px 8px 8px rgba(24,24,24,0.2), 0px -8px 24px rgba(24,24,24,0.2);
-        border: 2px solid #14c600;
-
-        p {
-            color: white;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-
-        button {
-            @extend .Jbutton;
-            margin: 10px;
-        }
-    }
-}
 
 @media only screen and (max-width: 1100px) {
         #container {
@@ -420,98 +343,4 @@ label { //more RegEx
                 display: none !important;
                 pointer-events: none !important;
         }
-}
-
-
-#top-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        border-bottom: 0.25em solid #14c600 !important;
-        background-color: rgb(28,28,28);
-        height:1.5em;
-        width:100%;
-        font-size:1.3em;
-        z-index: 5; /*the starfish smiles upon us all*/
-}
-      
-img {
-        position: relative;
-        z-index: 0;
-}
-      
-.auto *:is(table,img) {
-        border-color: #14c600 !important;
-}
-.auto .borderLeft {
-        border-left: 0.5em solid #14c600 !important;
-}
-      
-.auto .borderRight {
-        border-right: 0.5em solid #14c600 !important;
-}
-      
-.auto .borderBottom {
-        border-bottom: 0.5em solid #14c600 !important;
-}
-      
-.auto .borderTop {
-        border-top: 0.5em solid #14c600 !important;
-}
-      
-.auto h2 {
-        border-bottom: 2px solid #14c600 !important;
-        border-top: 2px solid #14c600 !important;
-        background-color: rgba(20, 198, 0, 0.1882352941) !important;
-}
-      
-.teleop *:is(table,img) {
-        border-color: $colorBlue !important;
-}
-.teleop .borderLeft {
-        border-left: 0.5em solid $colorBlue !important;
-}
-      
-.teleop .borderRight {
-        border-right: 0.5em solid $colorBlue !important;
-}
-      
-.teleop .borderBottom {
-        border-bottom: 0.5em solid $colorBlue !important;
-}
-      
-.teleop .borderTop {
-        border-top: 0.5em solid $colorBlue !important;
-}
-      
-.teleop h2 {
-        border-bottom: 2px solid $colorBlue !important;
-        border-top: 2px solid $colorBlue !important;
-
-        background-color: rgba(0, 20, 198, 0.1882352941) !important;
-}
-      
-.endgame *:is(table,img) {
-        border-color: $colorRed !important;
-}
-.endgame .borderLeft {
-        border-left: 0.5em solid $colorRed !important;
-}
-      
-.endgame .borderRight {
-        border-right: 0.5em solid $colorRed !important;
-}
-      
-.endgame .borderBottom {
-        border-bottom: 0.5em solid $colorRed !important;
-}
-      
-.endgame .borderTop {
-        border-top: 0.5em solid $colorRed !important;
-}
-      
-.endgame h2 {
-        border-bottom: 2px solid $colorRed !important;
-        border-top: 2px solid $colorRed !important;
-        background-color: rgba(198, 0, 20, 0.1882352941) !important;
 }

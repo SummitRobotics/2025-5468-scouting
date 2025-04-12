@@ -27,7 +27,7 @@
                             <strong>Match #:</strong>
                         </td>
                         <td>
-                            <input type="hidden" id="eventKey" value="2025pncmp"> <!-- Set your event key here -->
+                            <input type="hidden" id="eventKey" value="2025orwil"> <!-- Set your event key here -->
                             <select id="matchNum">
                                 <!-- Options will be populated dynamically -->
                             </select>
@@ -52,31 +52,6 @@
                 <br>
                 <button type="submit" class="Jbutton">Go to Scouting Form</button>
             </form>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <table class="tableNormal">
-                <tr>
-                    <th colspan="5">
-                        <span class="header">Choose text color theme</span>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="colorsel" id="blue"> <label for="blue">Blue</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="colorsel" id="red"> <label for="red">Red</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="colorsel" id="pink"> <label for="pink">pink</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="colorsel" id="white"> <label for="white">white</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="colorsel" id="eyal"> <label for="eyal">eyal</label>
-                    </td>
-                </tr>
-            </table>
         </div>
     </div>
     <script>
@@ -114,7 +89,6 @@
             const matchNum = document.getElementById('matchNum').value;
             const scoutingSeat = document.getElementById('scoutingSeat').value;
             const name = document.getElementById('name').value;
-            const themeSelect = document.querySelector('input[name="colorsel"]:checked');
 
             fetch(`https://www.thebluealliance.com/api/v3/match/${eventKey}_qm${matchNum}`, {
                 headers: {
@@ -144,7 +118,7 @@
                         teamNumber = data.alliances.blue.team_keys[2].replace('frc', '');
                         break;
                 }
-                window.location.assign(`/form.html?team=${teamNumber}&match=${matchNum}&name=${encodeURIComponent(name)}&seat=${scoutingSeat}&theme=${themeSelect ? themeSelect.id : 'white'}`);
+                window.location.assign(`/form.html?team=${teamNumber}&match=${matchNum}&name=${encodeURIComponent(name)}&seat=${scoutingSeat}`);
             })
             .catch(error => {
                 console.error('Error fetching match data:', error);
