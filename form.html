@@ -19,7 +19,7 @@
     </div>
     </div>
     <div id="container">
-        <div id="containerInner">
+        <div class="containerInner">
             <h1 class="headerMain">5468 Scouting Form 2025</h1>
             <div class="auto">
                 <h2>Auto Phase</h2>
@@ -633,6 +633,7 @@
         const matchNum = urlParams.get('match');
         const scoutName = urlParams.get('name');
         const scoutingSeat = urlParams.get('seat'); // Retrieve the scouting seat from the URL
+        const theme = urlParams.get('theme'); // Retrieve the theme from the URL
 
         // Populate the fields with the retrieved values
         if (teamNumber) {
@@ -644,8 +645,11 @@
         if (scoutingSeat) {
             console.log(`Scouting Seat: ${scoutingSeat}`); // Log the scouting seat to verify
         }
-
+        if (theme) {
+            console.log(`Theme: ${theme}`); // Log the theme to verify
+        }
         // these comments sure sound like copilot /lh
+        // thats because they are
         // Check if the name is "jett" (case-insensitive)
         if (scoutName && scoutName.toLowerCase() === 'jett') {
             // Change the text color of all elements to #0066cc
@@ -758,6 +762,26 @@
             eyalCustom.style.whiteSpace = 'nowrap';
             eyalCustom.style.textAlign = 'center';
             topBar.appendChild (eyalCustom);
+            document.getElementById('container').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundSize = 'auto';
+            document.getElementById('containerInner').style.backgroundPosition = 'center';
+            document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
+            // Hide input backgrounds
+            document.querySelectorAll('input').forEach((input) => {
+                input.style.backgroundColor = 'transparent'
+            });
+            const adjustBackgroundForMobile = () => {
+                if (window.innerWidth <= 768) { // Mobile screen width threshold
+                    document.getElementById('containerInner').style.backgroundSize = 'auto';
+                } else {
+                    document.getElementById('containerInner').style.backgroundSize = '50% 50%';
+                }
+            };
+
+            // Call the function on load and on resize
+            adjustBackgroundForMobile();
+            window.addEventListener('resize', adjustBackgroundForMobile);
             const endGameImage = document.querySelector('.endgame img');
             if (endGameImage) {
                 endGameImage.src = 'IMG_1230.webp';
@@ -770,7 +794,7 @@
             });
             const topBar = document.getElementById('top-bar');
             const ashCustom = document.createElement('span');
-            ashCustom.textContent = 'Teto Reference';
+            ashCustom.textContent = 'ash ketchum';
             ashCustom.style.position = 'absolute';
             ashCustom.style.color = '#df60eb';
             ashCustom.style.left = '50%';
@@ -804,6 +828,26 @@
                 endGameImage.alt = 'End Game - izzy';
             }
         }
+        if (scoutName && scoutName.toLowerCase() === 'finn'){
+            
+            const topBar = document.getElementById('top-bar');
+            const finnCustom = document.createElement('span');
+            finnCustom.textContent = 'PINEAPPLE';
+            finnCustom.style.position = 'absolute';
+            finnCustom.style.left = '50%';
+            finnCustom.style.transform = 'translateX(-50%)';
+            finnCustom.style.fontWeight = 'bold';
+            finnCustom.style.fontSize = '1rem';
+            finnCustom.style.whiteSpace = 'nowrap';
+            finnCustom.style.textAlign = 'center';
+            
+            topBar.appendChild (finnCustom);
+            const endGameImage = document.querySelector('.endgame img');
+            if (endGameImage) {
+                endGameImage.src = '/images/IMG_4448.jpeg';
+                endGameImage.alt = 'End Game - finn';
+            }
+        }
         if (scoutName && scoutName.toLowerCase() === 'evelyn'){
             const topBar = document.getElementById('top-bar');
             const evelynCustom = document.createElement('span');
@@ -815,13 +859,47 @@
             evelynCustom.style.fontSize = '1rem';
             evelynCustom.style.whiteSpace = 'nowrap';
             evelynCustom.style.textAlign = 'center';
-            topBar.appendChild (izzyCustom);
+            topBar.appendChild (evelynCustom);
             const endGameImage = document.querySelector('.endgame img');
             if (endGameImage) {
                 endGameImage.src = 'IMG_1176.webp';
                 endGameImage.alt = 'End Game - evelyn';
             }
         }
+        if (theme && theme.toLowerCase() === 'blue') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#0066cc';
+            });
+        } else if (theme && theme.toLowerCase() === 'red') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#ed5c5c';
+            });
+        } else if (theme && theme.toLowerCase() === 'pink') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#ff0090';
+            });
+        } else if (theme && theme.toLowerCase() === 'white') {
+            document.querySelectorAll('*').forEach((element) => {
+                element.style.color = '#ffffff';
+            });
+        } else if (theme && theme.toLowerCase() === 'eyal') {
+            document.getElementById('container').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundImage = 'url("IMG_1230.webp")';
+            document.getElementById('containerInner').style.backgroundSize = 'auto';
+            document.getElementById('containerInner').style.backgroundPosition = 'center';
+            document.getElementById('containerInner').style.backgroundRepeat = 'repeat';
+
+            // Hide input backgrounds
+            document.querySelectorAll('input').forEach((input) => {
+                input.style.backgroundColor = 'transparent';
+            });
+        }
+
+        // Hide input backgrounds and borders
+        document.querySelectorAll('input').forEach((input) => {
+            input.style.background = 'none';
+            input.style.border = 'none';
+        });
     });
 </script>
 </html>

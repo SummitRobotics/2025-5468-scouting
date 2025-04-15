@@ -1,4 +1,4 @@
-console.log('working, v3.0 - 4/1/2025');
+console.log('working, v3.1 - 4/7/2025');
 document.addEventListener("DOMContentLoaded", () => {
 
     const minusButton = document.getElementById("minusL1");
@@ -412,16 +412,16 @@ document.addEventListener("DOMContentLoaded", () => {
             counter2: count2,
             counter3: count3,
             counter4: count4,
+            counterP: countP,
             counterN: countN,
             counterS: countS,
-            counterP: countP,
             Tcounter1: Tcount1,
             Tcounter2: Tcount2,
             Tcounter3: Tcount3,
             Tcounter4: Tcount4,
+            TcounterP: TcountP,
             TcounterN: TcountN,
             TcounterS: TcountS,
-            TcounterP: TcountP,
             finalStatus: barge ? barge.nextElementSibling.textContent : null,
             coralPickup: coralPickup ? coralPickup.nextElementSibling.textContent : null,
             algaePickup: algaePickup ? algaePickup.nextElementSibling.textContent : null,
@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         const queryString = new URLSearchParams(data).toString();
 
-        fetch(`https://script.google.com/macros/s/AKfycbz2UPfTx8eFaOaHe-0Wdw3o3gXzAfp4-UnMadp_XIFjQMFkH6tgTXQMrmJ38OmqpMzpKw/exec?${queryString}`, {
+        fetch(`https://script.google.com/macros/s/AKfycbxlcspujTzc5fYQYo8EqIdPPMmOMfVxZ94QoFBei03OgT1uemrJIffpKdLENLRaqQmwMQ/exec?${queryString}`, {
             method: 'POST',
             redirect: "follow",
             headers: {
@@ -538,4 +538,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return messages[0].text; // Fallback to the first message
     }
+
+    // Hide input backgrounds and borders
+    document.querySelectorAll('input').forEach((input) => {
+        input.style.background = 'none';
+        input.style.border = 'none';
+    });
 });
