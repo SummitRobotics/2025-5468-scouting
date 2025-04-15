@@ -126,7 +126,7 @@ hr {
         width: 77.7777777777%; // lucky number 7!
         box-shadow: -8px 0px 8px rgba(24,24,24,0.2), 8px 0px 24px rgba(24,24,24,0.2);
 
-        #containerInner {
+        .containerInner {
                 padding: 8px 16px;
                 background-color: rgb(24,24,24);
 
@@ -138,7 +138,6 @@ hr {
                         background-color: $chaosGreenDark;
                         width: 90%;
                         margin: 2em auto;
-                        text-align: center;
                         padding: 0.5em;
                 }
         }
@@ -159,7 +158,7 @@ hr {
 input[type=radio], input[type=checkbox] {
         appearance: none;
         border-radius: 50%;
-        background-color: rgb(0,0,0);
+        background: rgb(0,0,0);
         border: 0.3em solid rgb(28,28,28);
         outline: 0.2em solid $chaosGreenDark;
         width: 1.5em;
