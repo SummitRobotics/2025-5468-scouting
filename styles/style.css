@@ -28,11 +28,13 @@ hr {
 .headerMain {
   text-align: center;
   text-shadow: 2px 2px 8px rgba(61, 61, 61, 0.5), -2px 2px 8px rgba(61, 61, 61, 0.5), 2px -2px 8px rgba(61, 61, 61, 0.5), -2px -2px 8px rgba(61, 61, 61, 0.5);
-  font-size: 3em;
+  margin-top: 3em;
+  padding: 0em;
+  font-size: 1.7em;
 }
 
 .tableNormal {
-  margin: 2em auto;
+  margin: 0.6em auto;
   background-color: rgb(20, 20, 20);
   box-shadow: -8px 0px 8px rgba(20, 20, 20, 0.2), 8px 0px 24px rgba(20, 20, 20, 0.2), 0px 8px 8px rgba(20, 20, 20, 0.2), 0px -8px 24px rgba(20, 20, 20, 0.2);
   width: 50%;
@@ -64,7 +66,7 @@ hr {
   white-space: nowrap;
 }
 .tableNormal td strong {
-  font-size: 1.4em;
+  font-size: 1em;
 }
 .tableNormal .noShow:hover {
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
@@ -88,7 +90,7 @@ hr {
   border-top: 2px solid #14c600;
   background-color: rgba(20, 198, 0, 0.1882352941);
   width: 90%;
-  margin: 2em auto;
+  margin: 0.7em auto;
   padding: 0.5em;
 }
 
@@ -229,7 +231,7 @@ textarea::spelling-error {
 }
 
 span[id^=cv], span[id^=Tcv] {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .Jbutton, .modal .modalContent button {
@@ -238,11 +240,11 @@ span[id^=cv], span[id^=Tcv] {
   color: white;
   padding: 0.5em;
   transition: all 0.6s cubic-bezier(0.06, 0.98, 0.41, 0.93);
-  font-size: 1.3em;
+  font-size: 1.4em;
   cursor: pointer;
   margin: 0.3em 0.7em;
-  min-width: 3em;
-  min-height: 3em;
+  min-width: 2.3em;
+  min-height: 2.3em;
   border-radius: 0.5em;
   display: inline-block !important;
 }
@@ -436,19 +438,19 @@ img {
 }
 
 .auto .borderLeft {
-  border-left: 0.5em solid #14c600 !important;
+  border-left: 0.2em solid #14c600 !important;
 }
 
 .auto .borderRight {
-  border-right: 0.5em solid #14c600 !important;
+  border-right: 0.2em solid #14c600 !important;
 }
 
 .auto .borderBottom {
-  border-bottom: 0.5em solid #14c600 !important;
+  border-bottom: 0.2em solid #14c600 !important;
 }
 
 .auto .borderTop {
-  border-top: 0.5em solid #14c600 !important;
+  border-top: 0.2em solid #14c600 !important;
 }
 
 .auto h2 {
@@ -462,19 +464,19 @@ img {
 }
 
 .teleop .borderLeft {
-  border-left: 0.5em solid #AEC6CF !important;
+  border-left: 0.2em solid #AEC6CF !important;
 }
 
 .teleop .borderRight {
-  border-right: 0.5em solid #AEC6CF !important;
+  border-right: 0.2em solid #AEC6CF !important;
 }
 
 .teleop .borderBottom {
-  border-bottom: 0.5em solid #AEC6CF !important;
+  border-bottom: 0.2em solid #AEC6CF !important;
 }
 
 .teleop .borderTop {
-  border-top: 0.5em solid #AEC6CF !important;
+  border-top: 0.2em solid #AEC6CF !important;
 }
 
 .teleop h2 {
@@ -488,19 +490,19 @@ img {
 }
 
 .endgame .borderLeft {
-  border-left: 0.5em solid #FF6961 !important;
+  border-left: 0.2em solid #FF6961 !important;
 }
 
 .endgame .borderRight {
-  border-right: 0.5em solid #FF6961 !important;
+  border-right: 0.2em solid #FF6961 !important;
 }
 
 .endgame .borderBottom {
-  border-bottom: 0.5em solid #FF6961 !important;
+  border-bottom: 0.2em solid #FF6961 !important;
 }
 
 .endgame .borderTop {
-  border-top: 0.5em solid #FF6961 !important;
+  border-top: 0.2em solid #FF6961 !important;
 }
 
 .endgame h2 {
