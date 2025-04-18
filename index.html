@@ -94,7 +94,7 @@
             .then(response => response.json())
             .then(matches => {
                 matches
-                    .filter(match => match.comp_level === 'qm' && match.match_number >= 63) // Only add qualification matches starting from 63
+                    .filter(match => match.comp_level === 'qm') // Only add qualification matches starting from 63
                     .sort((a, b) => a.match_number - b.match_number) // Sort matches by match number
                     .forEach(match => {
                         const option = document.createElement('option');
