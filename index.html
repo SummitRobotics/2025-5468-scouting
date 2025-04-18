@@ -94,7 +94,7 @@
             .then(response => response.json())
             .then(matches => {
                 matches
-                    .filter(match => match.comp_level === 'qm') // Only add qualification matches starting from 63
+                    .filter(match => match.comp_level === 'qm') // Only add qualification matches
                     .sort((a, b) => a.match_number - b.match_number) // Sort matches by match number
                     .forEach(match => {
                         const option = document.createElement('option');
@@ -106,7 +106,8 @@
             .catch(error => {
                 console.error('Error fetching matches:', error);
             });
-            )};
+        });
+
         document.getElementById('scoutingForm').addEventListener('submit', (event) => {
             event.preventDefault(); // Prevent the default form submission behavior
             const eventKey = document.getElementById('eventKey').value;
