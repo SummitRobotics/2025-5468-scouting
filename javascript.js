@@ -1,4 +1,4 @@
-console.log('working, v3.1 - 4/7/2025');
+console.log('working, v4 - Final 2025 Build');
 document.addEventListener("DOMContentLoaded", () => {
 
     const minusButton = document.getElementById("minusL1");
@@ -23,26 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pleaseWaitMessage.style.color = "blue";
     pleaseWaitMessage.style.textAlign = "center";
     submitButton.parentNode.insertBefore(pleaseWaitMessage, submitButton);
-
-    const messages = [
-        { text: "Please wait...", probability: 50 },
-        { text: "Submitting...", probability: 45 },
-        { text: "Submitting?", probability: 4.5 },
-        { text: "the cake is a lie...", probability: 0.5 }
-    ];
-
-    function getRandomMessage() {
-        const totalProbability = messages.reduce((sum, msg) => sum + msg.probability, 0);
-        const random = Math.random() * totalProbability;
-        let cumulative = 0;
-        for (const message of messages) {
-            cumulative += message.probability;
-            if (random <= cumulative) {
-                return message.text;
-            }
-        }
-        return messages[0].text; // Fallback to the first message
-    }
 
     let count1 = 0;
     let count2 = 0;
@@ -400,11 +380,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         console.log(defenseAssess);
 
-        const data = {
-            timestamp: formattedDate, // Add the timestamp as the first field
+        const data = {   // Data to pass to forms
+            timestamp: formattedDate, 
             scoutName: scoutName,
             matchNum: matchNum,
-            scoutingSeat: scoutingSeat, // Add the scouting seat to the data
+            scoutingSeat: scoutingSeat,
             teamNumber: teamNumber,
             robotOnField: robotOnField ? robotOnField.nextElementSibling.textContent : null,
             leavePos: leavePos ? leavePos.nextElementSibling.textContent : null,
@@ -491,7 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
         message.style.marginBottom = "20px";
         modalContent.appendChild(message);
 
-        // Add "Yes" button
+        
         const yesButton = document.createElement("button");
         yesButton.textContent = "Yes";
         yesButton.className = "Jbutton"; // Use your existing button styles
@@ -502,7 +482,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         modalContent.appendChild(yesButton);
 
-        // Add "No" button
+        
         const noButton = document.createElement("button");
         noButton.textContent = "No";
         noButton.className = "Jbutton"; // Use your existing button styles
