@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         const queryString = new URLSearchParams(data).toString();
 
-        fetch(`https://script.google.com/macros/s/AKfycbxlcspujTzc5fYQYo8EqIdPPMmOMfVxZ94QoFBei03OgT1uemrJIffpKdLENLRaqQmwMQ/exec?${queryString}`, {
+        fetch(`https://script.google.com/macros/s/AKfycbwaeAWUAK3oIMb1jt1qXzEfxNVKcXMstkbm4Y6n1iZc3CJtqOZTdyJKNTKkDSe0r13Big/exec?${queryString}`, {
             method: 'POST',
             redirect: "follow",
             headers: {
