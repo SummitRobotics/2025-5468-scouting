@@ -22,12 +22,12 @@
                             <input type="text" id="name" required>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="teamNumRow" style="display: none;">
                         <td>
                             <strong>Team #:</strong>
                         </td>
                         <td>
-                            <input type="number" id="teamNum" required>
+                            <input type="number" id="teamNum">
                         </td>
                     </tr>
                     <tr>
@@ -93,6 +93,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const eventKey = document.getElementById('eventKey').value;
             const matchNumSelect = document.getElementById('matchNum');
+            const teamNumRow = document.getElementById('teamNumRow');
 
             fetch(`https://www.thebluealliance.com/api/v3/event/${eventKey}/matches`, {
                 headers: {
@@ -113,12 +114,7 @@
             })
             .catch(error => {
                 console.error('Error fetching matches:', error);
-                for (let i = 1; i <= 10; i++) { // Default to 10 matches
-                    const option = document.createElement('option');
-                    option.value = i;
-                    option.textContent = i;
-                    matchNumSelect.appendChild(option);
-                }
+                teamNumRow.style.display = 'table-row'; // Show the team number row on API failure
             });
         });
 
