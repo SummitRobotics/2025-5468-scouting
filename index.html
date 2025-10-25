@@ -24,6 +24,14 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong>Team #:</strong>
+                        </td>
+                        <td>
+                            <input type="number" id="teamNum" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong>Match #:</strong>
                         </td>
                         <td>
@@ -105,6 +113,12 @@
             })
             .catch(error => {
                 console.error('Error fetching matches:', error);
+                for (let i = 1; i <= 10; i++) { // Default to 10 matches
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = i;
+                    matchNumSelect.appendChild(option);
+                }
             });
         });
 
@@ -114,41 +128,10 @@
             const matchNum = document.getElementById('matchNum').value;
             const scoutingSeat = document.getElementById('scoutingSeat').value;
             const name = document.getElementById('name').value;
+            const teamNum = document.getElementById('teamNum').value;
             const themeSelect = document.querySelector('input[name="colorsel"]:checked');
 
-            fetch(`https://www.thebluealliance.com/api/v3/match/${eventKey}_qm${matchNum}`, {
-                headers: {
-                    'X-TBA-Auth-Key': apiKey
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                let teamNumber;
-                switch (scoutingSeat) {
-                    case 'red1':
-                        teamNumber = data.alliances.red.team_keys[0].replace('frc', '');
-                        break;
-                    case 'red2':
-                        teamNumber = data.alliances.red.team_keys[1].replace('frc', '');
-                        break;
-                    case 'red3':
-                        teamNumber = data.alliances.red.team_keys[2].replace('frc', '');
-                        break;
-                    case 'blue1':
-                        teamNumber = data.alliances.blue.team_keys[0].replace('frc', '');
-                        break;
-                    case 'blue2':
-                        teamNumber = data.alliances.blue.team_keys[1].replace('frc', '');
-                        break;
-                    case 'blue3':
-                        teamNumber = data.alliances.blue.team_keys[2].replace('frc', '');
-                        break;
-                }
-                window.location.assign(`/form.html?team=${teamNumber}&match=${matchNum}&name=${encodeURIComponent(name)}&seat=${scoutingSeat}&theme=${themeSelect ? themeSelect.id : 'white'}`);
-            })
-            .catch(error => {
-                console.error('Error fetching match data:', error);
-            });
+            window.location.assign(`/form.html?team=${teamNum}&match=${matchNum}&name=${encodeURIComponent(name)}&seat=${scoutingSeat}&theme=${themeSelect ? themeSelect.id : 'white'}`);
         });
     </script>
 </body>
